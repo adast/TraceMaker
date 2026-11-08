@@ -39,6 +39,7 @@
 #include "route/legalize.hpp"
 #include "route/ref_map.hpp"
 #include "route/search_queue.hpp"
+#include "route/queue_key.hpp"
 #include "route/obstacles.hpp"
 
 namespace tmk::route {
@@ -1840,13 +1841,9 @@ struct Router::Impl {
     using QE = SearchQueue::Entry;
     SearchQueue open;
     const bool tie_deep = opt.tie_deep;
-    auto qkey = [&](std::int64_t g, std::size_t st) -> std::uint64_t {
-      if (!tie_deep) return st;
-      constexpr std::uint64_t kMax = (std::uint64_t{1} << 32) - 1;
-      const std::uint64_t gq = std::min<std::uint64_t>(static_cast<std::uint64_t>(std::max<std::int64_t>(g, 0)) >> 8, kMax);
-      return ((kMax - gq) << 31) | st;
-    };
-    auto qstate = [&](const QE& e) -> std::size_t { return tie_deep ? static_cast<std::size_t>(e.second & ((std::uint64_t{1} << 31) - 1)) : static_cast<std::size_t>(e.second); };
+    const QueueKeyFormat queue_keys(tie_deep, states);
+    auto qkey = [&](std::int64_t g, std::size_t state) { return queue_keys.encode(g, state); };
+    auto qstate = [&](const QE& entry) { return queue_keys.state(entry.second); };
     auto push = [&](std::int64_t g, std::int64_t f, std::size_t st) { open.emplace(f, qkey(g, st)); };
     const Point sp = b.pads[static_cast<std::size_t>(c.pad_a)].pos;
     start_stub.clear();
@@ -1900,9 +1897,11 @@ struct Router::Impl {
         proved = late_reach_proof(c, w, src, dst, hw, vd, vdrill, proved_edge);
     };
     while (!open.empty()) {
-      const std::int64_t f = open.top().first;
-      const std::size_t s = qstate(open.top());
+      const QE entry = open.top();
+      const std::int64_t f = entry.first;
+      const std::size_t s = qstate(entry);
       open.pop();
+      if (queue_keys.proves_stale(entry.second, sn[s].g)) continue;
       const int dir = D == 9 ? static_cast<int>(s % 9) : static_cast<int>(sn[s].tag >> 28);
       const std::size_t lc = s / D;
       const int l = static_cast<int>(lc / cells);
