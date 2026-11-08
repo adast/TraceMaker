@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "route/obstacles.hpp"
+#include "route/raster_rows.hpp"
 
 #include "drc/coupling.hpp"
 
@@ -187,6 +188,7 @@ Obstacles::Obstacles(model::Board& board, const model::DesignRules& rules) : b_(
     for (const auto& c : cutouts_) loops.push_back(&c);
     std::vector<std::vector<double>> xs(loops.size());
     std::vector<std::size_t> at(loops.size());
+    RasterRows raster_rows;
     for (int y = 0; y < ir_h_; ++y) {
       const double yc = static_cast<double>(bounds_.y0 + static_cast<Coord>(y) * ir_cell_ + ir_cell_ / 2);
       for (std::size_t li = 0; li < loops.size(); ++li) {
@@ -201,6 +203,8 @@ Obstacles::Obstacles(model::Board& board, const model::DesignRules& rules) : b_(
         std::sort(v.begin(), v.end());
         at[li] = 0;
       }
+      if (raster_rows.classify(xs, bounds_.x0, ir_cell_,
+                              inside_raster_.data() + static_cast<std::size_t>(y) * static_cast<std::size_t>(ir_w_), ir_w_)) continue;
       for (int x = 0; x < ir_w_; ++x) {
         const double xc = static_cast<double>(bounds_.x0 + static_cast<Coord>(x) * ir_cell_ + ir_cell_ / 2);
         bool in = true;
