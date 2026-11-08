@@ -14,6 +14,7 @@
 #include "model/board.hpp"
 #include "model/rules.hpp"
 #include "route/global_router.hpp"
+#include "gpu/fixed/options.hpp"
 
 namespace tmk::route {
 
@@ -25,6 +26,8 @@ struct ConnRoute {
 };
 
 struct RouterOptions {
+  gpu::fixed::PrefetchOptions fixed_geometry;
+  bool verify_acceleration = false;
   Coord pitch = 0;              // lattice pitch; 0 = automatic from net-class widths and clearances
   // Auto pitch multiplier on small lattices (< 1M points per layer): a finer lattice finds fan-outs the default one
   // misses and small boards have the time for it (doc 05 §25).
@@ -347,6 +350,9 @@ struct WorkProfile {
 };
 
 struct RouteResult {
+  gpu::fixed::PrefetchStatistics fixed_geometry;
+  std::uint64_t verified_field_values = 0;
+  std::uint64_t verified_routed_bounds = 0;
   std::vector<model::Track> tracks;  // new copper, in commit order
   std::vector<model::Via> vias;
   std::vector<ConnRoute> conn_routes;  // the same copper per connection (best state), for a warm start

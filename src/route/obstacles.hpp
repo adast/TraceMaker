@@ -15,7 +15,7 @@
 #include "model/rules.hpp"
 #include "gpu/fixed/context.hpp"
 
-namespace tmk::gpu::fixed { struct Scene; }
+namespace tmk::gpu::fixed { struct Scene; class Prefetch; }
 
 namespace tmk::route {
 
@@ -64,6 +64,9 @@ class Obstacles {
   // is legal for that net only). Clearances use `probe_net`'s class; diff-pair relief is not applied (safe).
   static constexpr std::int32_t kFree = -1, kBlocked = -2;
   std::int32_t fixed_code(geom::Point p, int layer, Coord hw, Coord margin, model::NetId probe_net, bool via_probe = false) const;
+  // Scalar reference bypasses the optional ready-answer supply.
+  std::int32_t fixed_code_reference(geom::Point p, int layer, Coord hw, Coord margin,
+                                    model::NetId net, bool via = false) const;
   std::int32_t fixed_via_code(geom::Point p, Coord d, Coord drill, Coord margin, model::NetId probe_net) const;
   // Snapshot the complete fixed-query context without evaluating a point.
   gpu::fixed::Context fixed_context(int layer, Coord hw, Coord margin, model::NetId net, bool via = false) const;
@@ -158,6 +161,8 @@ class Obstacles {
   std::vector<GapBounds> gap_bounds_;      // by net * copper count + layer
   std::vector<std::vector<int>> net_tracks_;  // copper item ids of each net's tracks (fixed and routed; removed ones are skipped)
 
+  friend class ScopedFixedPrefetch;
+  gpu::fixed::Prefetch* fixed_prefetch_ = nullptr;
   gpu::fixed::SceneRevision fixed_revision_;
   model::Board& b_;
   const model::DesignRules& r_;
@@ -211,6 +216,18 @@ class Obstacles {
   Coord max_hole_local_ = 0;                         // largest local (pad/footprint) clearance on a hole                               // mask expansion of untented vias (0 when tented)
   // Mask-opening and copper-text conflicts for new copper on `layer` (fixed obstacles only).
   void aperture_codes(const geom::Shape& s, int layer, bool via_probe, const std::function<void(model::NetId)>& hit) const;
+};
+
+// Bind a router-owned supply to an obstacle object only while a search is active.
+class ScopedFixedPrefetch {
+  Obstacles& obstacles_;
+  gpu::fixed::Prefetch* previous_;
+public:
+  ScopedFixedPrefetch(Obstacles& obstacles, gpu::fixed::Prefetch* supply)
+      : obstacles_(obstacles), previous_(obstacles.fixed_prefetch_) { obstacles_.fixed_prefetch_ = supply; }
+  ~ScopedFixedPrefetch() { obstacles_.fixed_prefetch_ = previous_; }
+  ScopedFixedPrefetch(const ScopedFixedPrefetch&) = delete;
+  ScopedFixedPrefetch& operator=(const ScopedFixedPrefetch&) = delete;
 };
 
 // Filled area of zone fill items (nm^2), shoelace over each item's outline.

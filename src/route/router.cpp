@@ -44,6 +44,7 @@
 #include "route/planar_moves.hpp"
 #include "route/zero_node_array.hpp"
 #include "route/routed_bounds.hpp"
+#include "gpu/fixed/prefetch.hpp"
 #include "route/obstacles.hpp"
 
 namespace tmk::route {
@@ -91,6 +92,7 @@ struct Router::Impl {
   RouterOptions opt;  // a copy: the breakout profile (package_boxes) sets some options for the board
   model::Board b;  // working copy
   std::unique_ptr<Obstacles> obs;
+  gpu::fixed::Prefetch fixed_prefetch;  // destroyed before its obstacle owner
   RouteResult res;
   std::chrono::steady_clock::time_point t0;
   Coord pitch = 0;
@@ -221,7 +223,8 @@ struct Router::Impl {
   }
 
   live::Slot* lslot = nullptr;  // this router's row on the live page (nullptr: not shown)
-  Impl(const model::Board& in, const model::DesignRules& r, const RouterOptions& o) : rules(r), opt(o), b(in) {
+  Impl(const model::Board& in, const model::DesignRules& r, const RouterOptions& o)
+      : rules(r), opt(o), b(in), fixed_prefetch(o.fixed_geometry, o.gpu_device, o.verify_acceleration) {
     lslot = live::slot(opt.live_name.empty() ? "router" : opt.live_name);
     // Advice regions and other in-memory rule areas: part of the working copy only, so every obstacle test sees them.
     b.zones.insert(b.zones.end(), opt.extra_zones.begin(), opt.extra_zones.end());
@@ -452,7 +455,7 @@ struct Router::Impl {
         .origin_x = lat.x0, .origin_y = lat.y0, .pitch = pitch,
         .eligible = rules.custom.empty() && !rules.classes.empty() &&
                     !obs->rules().any_physical_hole_clearance() && !obs->rules().any_physical_clearance(),
-        .verify = false,
+        .verify = opt.verify_acceleration,
         .max_radius = tight_probe + pitch * 71 / 100 + 1,
         .mask_expansion = vm, .hole_clearance = hc, .copper_clearance = tight_clearance};
     routed_bounds.configure(bounds_config);
@@ -1475,6 +1478,12 @@ struct Router::Impl {
     const bool small = static_cast<long>(w.w) * w.h * nl < gpu_minimum;
     const auto st = opt.gpu_device >= 0 && !small ? gpu::field_gpu(opt.gpu_device, fp, field) : gpu::GpuStatus{false, "no GPU"};
     if (st.ok) {
+      if (opt.verify_acceleration) {
+        std::vector<std::int32_t> reference;
+        gpu::field_cpu(fp, reference);
+        if (reference != field) throw std::runtime_error("GPU field differs from the CPU reference");
+        res.verified_field_values += field.size();
+      }
       ++field_runs;
     } else {
       gpu::field_cpu(fp, field);
@@ -1662,6 +1671,9 @@ struct Router::Impl {
   }
 
   bool search(const Connection& c, const Window& w, std::vector<PathNode>& path) {
+    const auto origin = at(0, 0);
+    const bool prefetch_ready = fixed_prefetch.configure(obs.get(), {origin.x, origin.y}, pitch, nx, ny);
+    const ScopedFixedPrefetch supply_scope(*obs, prefetch_ready ? &fixed_prefetch : nullptr);
     last_miss = Miss::None;
     reach_said_no = false;
     bool touched_edge = false;
@@ -7858,10 +7870,16 @@ RouteResult Router::run() {
     model::DesignRules r = rules_;
     r.custom.insert(r.custom.end(), opt_.extra_rules.begin(), opt_.extra_rules.end());
     Impl impl(in_, r, opt_);
-    return impl.run();
+    auto result = impl.run();
+    result.fixed_geometry = impl.fixed_prefetch.statistics();
+    result.verified_routed_bounds = impl.routed_bounds.verified_predictions();
+    return result;
   }
   Impl impl(in_, rules_, opt_);
-  return impl.run();
+  auto result = impl.run();
+  result.fixed_geometry = impl.fixed_prefetch.statistics();
+  result.verified_routed_bounds = impl.routed_bounds.verified_predictions();
+  return result;
 }
 
 }  // namespace tmk::route

@@ -1633,6 +1633,12 @@ RouteJobResult run_route_job(RouteJob job) {
                  {"variant", best_index}, {"variant_name", best_name}, {"escape_corridors", res.escape_corridors},
                  {"escape_corridor_mm", res.escape_corridor_mm}, {"package_pin_edges", res.package_pin_edges}, {"escape_reclaimed", res.escape_reclaimed},
                  {"bundle_groups", res.bundle_groups}, {"bundle_spines", res.bundle_spines}, {"bundle_conns", res.bundle_conns}, {"bundle_lanes", res.bundle_lanes}, {"tunnels", res.tunnels}};
+  out.summary["verified_field_values"] = res.verified_field_values;
+  out.summary["verified_routed_bounds"] = res.verified_routed_bounds;
+  const auto& geometry = res.fixed_geometry;
+  out.summary["fixed_geometry"] = {{"calls", geometry.calls}, {"hits", geometry.hits},
+      {"batches", geometry.batches}, {"points", geometry.points},
+      {"verified", geometry.verified}, {"failures", geometry.failures}};
   if (!variant_rows.empty()) out.summary["variants"] = std::move(variant_rows);
   // M22 repair steps (D156), only when they ran: a run without them writes the summary it always did.
   for (const auto& [k, v] : {std::pair<const char*, long>{"via_shoves", res.via_shoves}, {"via_shove_trials", res.via_shove_trials}, {"window_escalations", res.window_escalations},

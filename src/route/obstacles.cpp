@@ -875,7 +875,7 @@ void Obstacles::aperture_codes(const Shape& s, int layer, bool via_probe, const 
     if (l == layer && t.box.inflated(tc).intersects(s.box) && geom::closer_than(s, t, tc)) hit(0);
 }
 
-std::int32_t Obstacles::fixed_code(Point p, int layer, Coord hw, Coord margin, model::NetId probe_net, bool via_probe) const {
+std::int32_t Obstacles::fixed_code_reference(Point p, int layer, Coord hw, Coord margin, model::NetId probe_net, bool via_probe) const {
   if (!inside_board(p, 0)) return kBlocked;
   static thread_local Shape s;  // scratch disk; fixed_code does not re-enter
   s.set_point(p, hw + margin);

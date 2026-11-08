@@ -117,6 +117,11 @@ public:
     enabled_ = false;
   }
 
+  // Diagnostic comparisons are counted separately from deterministic routing work.
+  std::uint64_t verified_predictions() const {
+    return verified_;
+  }
+
   void verified() {
     ++verified_;
   }

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "gpu/fixed/index_cache.hpp"
+#include "gpu/fixed/prefetch.hpp"
 #include "gpu/fixed/scene_query.hpp"
 #include "route/obstacles.hpp"
 #include <algorithm>
@@ -80,6 +81,29 @@ struct SceneBuilder {
   }
 };
 }  // namespace
+
+std::int32_t Obstacles::fixed_code(geom::Point point, int layer, Coord hw, Coord margin, model::NetId net,
+                                   bool via) const {
+  if (fixed_prefetch_) {
+    const auto context = fixed_context(layer, hw, margin, net, via);
+    std::int32_t answer = 0;
+    auto build_scene = [&] {
+      auto scene = export_fixed_scene(point, context, fixed_prefetch_->use_index_cache());
+      if (!(fixed_context(layer, hw, margin, net, via) == context))
+        throw std::runtime_error("Fixed context changed during scene export");
+      return scene;
+    };
+    if (fixed_prefetch_->predict(context, {point.x, point.y}, build_scene, answer)) {
+      if (fixed_prefetch_->verify()) {
+        if (answer != fixed_code_reference(point, layer, hw, margin, net, via))
+          throw std::runtime_error("GPU fixed-obstacle result differs from the scalar reference");
+        fixed_prefetch_->record_verified_hit();
+      }
+      return answer;
+    }
+  }
+  return fixed_code_reference(point, layer, hw, margin, net, via);
+}
 
 gpu::fixed::Context Obstacles::fixed_context(int layer, Coord hw, Coord margin, model::NetId probe_net,
                                              bool via_probe) const {
