@@ -43,6 +43,7 @@
 #include "route/planar_cost_table.hpp"
 #include "route/planar_moves.hpp"
 #include "route/zero_node_array.hpp"
+#include "route/routed_bounds.hpp"
 #include "route/obstacles.hpp"
 
 namespace tmk::route {
@@ -440,6 +441,21 @@ struct Router::Impl {
     const Coord vm = b.vias_tented ? 0 : std::max<Coord>(b.pad_to_mask_clearance, 0);
     near_infl = probe + pitch * 71 / 100 + 1 + std::max({obs->rules().max_clearance(), hc, 2 * vm + 1'000}) + 2 * pitch + 2;
     near_r.assign(static_cast<std::size_t>(nl) * static_cast<std::size_t>(nx) * static_cast<std::size_t>(ny), 0);
+    Coord tight_probe = 0;
+    for (std::size_t n = 0; n < b.nets.size(); ++n)
+      tight_probe = std::max(tight_probe, class_width(static_cast<NetId>(n)) / 2);
+    Coord tight_clearance = std::max<Coord>(rules.minimums.clearance, 0);
+    for (const auto& cls : rules.classes)
+      tight_clearance = std::max(tight_clearance, cls.clearance);
+    const RoutedBoundsConfig bounds_config{
+        .width = nx, .height = ny, .layers = nl,
+        .origin_x = lat.x0, .origin_y = lat.y0, .pitch = pitch,
+        .eligible = rules.custom.empty() && !rules.classes.empty() &&
+                    !obs->rules().any_physical_hole_clearance() && !obs->rules().any_physical_clearance(),
+        .verify = false,
+        .max_radius = tight_probe + pitch * 71 / 100 + 1,
+        .mask_expansion = vm, .hole_clearance = hc, .copper_clearance = tight_clearance};
+    routed_bounds.configure(bounds_config);
     if (!opt.critical.empty() && (opt.split_cost > 0 || opt.split_hard) && nl > 1) build_split_map();
   }
   // The cells of each layer over a void of the adjacent reference plane, from the zone fills (refilled by the engine where the file has none).
@@ -479,10 +495,19 @@ struct Router::Impl {
     }
   }
   std::vector<std::uint16_t> near_r;
+  RoutedBounds routed_bounds;
   Coord near_infl = 0;
   void near_mark(int item, int delta) {
     const auto& it = obs->copper().items[static_cast<std::size_t>(item)];
     if (delta > 0 && soft_fills) note_plane_contacts(item);
+    if (routed_bounds.enabled()) {
+      routed_bounds.mark_copper(it.box.x0, it.box.y0, it.box.x1, it.box.y1, static_cast<std::uint64_t>(it.layers),
+                                it.net, delta);
+      if (it.kind == drc::ItemKind::Via) {
+        const auto& v = b.vias[static_cast<std::size_t>(it.index)];
+        routed_bounds.mark_hole(v.pos.x, v.pos.y, v.drill, it.net, delta);
+      }
+    }
     const geom::Box bx = it.box.inflated(near_infl);
     const int x0 = std::max(0, static_cast<int>((bx.x0 - lat.x0) / pitch) - 1), x1 = std::min(nx - 1, static_cast<int>((bx.x1 - lat.x0) / pitch) + 1);
     const int y0 = std::max(0, static_cast<int>((bx.y0 - lat.y0) / pitch) - 1), y1 = std::min(ny - 1, static_cast<int>((bx.y1 - lat.y0) / pitch) + 1);
@@ -945,6 +970,17 @@ struct Router::Impl {
       st = 3;
     }
     if (near_r[gi] == 0) return st;
+    if (routed_bounds.predict(
+            gi, static_cast<std::size_t>(gy) * static_cast<std::size_t>(nx) + static_cast<std::size_t>(gx), net, hw,
+            st == 3 ? 0 : margin, obs->via_mask())) {
+      if (routed_bounds.verify()) {
+        const auto shadow = geom::Shape::point(p, hw + (st == 3 ? 0 : margin));
+        if (obs->routed_state(shadow, layer, net, drc::ItemKind::Track, soft, nullptr) != 0)
+          throw std::runtime_error("Tight routed bounds early-out differs from original routed geometry");
+        routed_bounds.verified();
+      }
+      return st;
+    }
     probe_disk.set_point(p, hw + (st == 3 ? 0 : margin));
     const int r = obs->routed_state(probe_disk, layer, net, drc::ItemKind::Track, soft, nullptr);
     if (r == 2) return 2;
