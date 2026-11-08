@@ -38,6 +38,7 @@
 #include "route/cut_test.hpp"
 #include "route/legalize.hpp"
 #include "route/ref_map.hpp"
+#include "route/search_queue.hpp"
 #include "route/obstacles.hpp"
 
 namespace tmk::route {
@@ -1833,14 +1834,11 @@ struct Router::Impl {
     auto sidx = [&](int l, std::int64_t ci, int dir) {
       return ((static_cast<std::size_t>(l) * cells + static_cast<std::size_t>(ci)) * D) + (D == 9 ? static_cast<std::size_t>(dir) : 0);
     };
-    // Open list: a min-heap of (f, key). The key is the state index; with tie_deep, ties on f go first to the larger g, in
-    // units of 256 (saturating at 2^32), then to the lower state index (states < 2^31: parents are int32). Its container is
-    // reachable so a field built during the search can re-key it (a priority_queue of pairs is faster here than a vector
-    // with a heap of structs: 4-8 % of the run on sbc and logicbone).
-    using QE = std::pair<std::int64_t, std::uint64_t>;
-    struct OpenList : std::priority_queue<QE, std::vector<QE>, std::greater<>> {
-      using std::priority_queue<QE, std::vector<QE>, std::greater<>>::c;
-    } open;
+    // Exact lexicographic ordering by (f, state key), with integer radix
+    // partitioning of f and a heap for ties. Lower priorities rebase the live
+    // entries, preserving behavior even when the heuristic is not monotone.
+    using QE = SearchQueue::Entry;
+    SearchQueue open;
     const bool tie_deep = opt.tie_deep;
     auto qkey = [&](std::int64_t g, std::size_t st) -> std::uint64_t {
       if (!tie_deep) return st;
@@ -1938,7 +1936,7 @@ struct Router::Impl {
           if (e.first - h(static_cast<int>(elc / cells), w.x0 + static_cast<int>(ci2 % w.w), w.y0 + static_cast<int>(ci2 / w.w)) <= sn[es].g) kept.push_back(e);
         };
         keep(QE{f, qkey(sn[s].g, s)});  // the state being expanded goes back too: the new key may put another state first
-        for (const auto& e : open.c) keep(e);
+        for (const auto& e : open.release_entries()) keep(e);
         make_field();
         ++field_late;
         for (auto& e : kept) {
@@ -1946,8 +1944,7 @@ struct Router::Impl {
           const std::int64_t ci2 = static_cast<std::int64_t>(elc % cells);
           e.first = sn[es].g + h(static_cast<int>(elc / cells), w.x0 + static_cast<int>(ci2 % w.w), w.y0 + static_cast<int>(ci2 / w.w));
         }
-        open.c = std::move(kept);
-        std::make_heap(open.c.begin(), open.c.end(), std::greater<>{});
+        open.assign(std::move(kept));
         --expanded;  // the state was not expanded
         continue;
       }
