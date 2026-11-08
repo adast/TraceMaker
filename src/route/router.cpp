@@ -5439,7 +5439,7 @@ struct Router::Impl {
             bool good = true;
             for (std::size_t i = 0; i + 1 < pts.size() && good; ++i)
               if (!(pts[i] == pts[i + 1]) && obs->segment_state(pts[i], pts[i + 1], t.layer, t.width, net, false, nullptr) != 0) good = false;
-            if (!good && pass_rip == 1) {
+            if (!good && pass_rip == 1 && ripped) {
               std::vector<int> owners;
               bool soft_only = true;
               for (std::size_t i = 0; i + 1 < pts.size() && soft_only; ++i)

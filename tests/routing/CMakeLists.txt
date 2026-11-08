@@ -1,0 +1,19 @@
+# Focused deterministic checks can run without Catch2 or the application dependencies.
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+  cmake_minimum_required(VERSION 3.28)
+  project(TraceMakerRoutingChecks LANGUAGES CXX)
+  set(CMAKE_CXX_STANDARD 20)
+  set(CMAKE_CXX_STANDARD_REQUIRED ON)
+  set(CMAKE_CXX_EXTENSIONS OFF)
+  set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
+  enable_testing()
+endif()
+get_filename_component(tm_routing_root "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
+function(add_routing_check name)
+  add_executable(tm_check_${name} check_${name}.cpp)
+  target_include_directories(tm_check_${name} PRIVATE "${tm_routing_root}/src" "${CMAKE_CURRENT_SOURCE_DIR}")
+  target_compile_options(tm_check_${name} PRIVATE
+    "$<$<CXX_COMPILER_ID:GNU,Clang,AppleClang>:-Wall;-Wextra;-Werror;-UNDEBUG>"
+    "$<$<CXX_COMPILER_ID:MSVC>:/UNDEBUG>")
+  add_test(NAME routing_${name} COMMAND tm_check_${name})
+endfunction()

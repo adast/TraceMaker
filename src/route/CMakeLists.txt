@@ -2,3 +2,8 @@ add_library(tm_route STATIC obstacles.cpp ref_map.cpp router.cpp global_router.c
 add_library(tm::route ALIAS tm_route)
 target_link_libraries(tm_route PUBLIC tm::drc tm::model tm::geom tm::core PRIVATE tm::gpu)
 tm_set_warnings(tm_route)
+
+# Keep CPU geometric predicates free of fused floating-point contractions.
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  set_property(SOURCE router.cpp obstacles.cpp APPEND PROPERTY COMPILE_OPTIONS -ffp-contract=off)
+endif()
