@@ -1470,7 +1470,9 @@ struct Router::Impl {
     // Same field on the GPU or the CPU (identical by construction), so results do not depend on GPU availability.
     // A small field is computed on the CPU: the GPU's fixed cost per field (allocation, copies, a sync per round) is more than
     // the CPU needs for it.
-    const bool small = static_cast<long>(w.w) * w.h * nl < opt.gpu_field_min_cells;
+    const long gpu_minimum = opt.gpu_field_min_cells >= 0 ? opt.gpu_field_min_cells
+        : gpu::compiled_backend() == gpu::Backend::Cuda ? 0 : 500'000;
+    const bool small = static_cast<long>(w.w) * w.h * nl < gpu_minimum;
     const auto st = opt.gpu_device >= 0 && !small ? gpu::field_gpu(opt.gpu_device, fp, field) : gpu::GpuStatus{false, "no GPU"};
     if (st.ok) {
       ++field_runs;
