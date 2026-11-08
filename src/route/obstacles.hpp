@@ -13,6 +13,9 @@
 #include "index/uniform_grid.hpp"
 #include "model/board.hpp"
 #include "model/rules.hpp"
+#include "gpu/fixed/context.hpp"
+
+namespace tmk::gpu::fixed { struct Scene; }
 
 namespace tmk::route {
 
@@ -62,6 +65,11 @@ class Obstacles {
   static constexpr std::int32_t kFree = -1, kBlocked = -2;
   std::int32_t fixed_code(geom::Point p, int layer, Coord hw, Coord margin, model::NetId probe_net, bool via_probe = false) const;
   std::int32_t fixed_via_code(geom::Point p, Coord d, Coord drill, Coord margin, model::NetId probe_net) const;
+  // Snapshot the complete fixed-query context without evaluating a point.
+  gpu::fixed::Context fixed_context(int layer, Coord hw, Coord margin, model::NetId net, bool via = false) const;
+  // Export only supported immutable geometry. Unsupported rules retain CPU evaluation.
+  gpu::fixed::Scene export_fixed_scene(geom::Point point, const gpu::fixed::Context& context,
+                                      bool use_index_cache = true) const;
   // Per-layer reference for fixed_via_code.
   std::int32_t fixed_via_code_reference(geom::Point p, Coord d, Coord drill, Coord margin, model::NetId probe_net) const;
   // Routed (rippable) copper only: 0 free, 1 conflicts (owners appended), 2 blocked when !soft.
@@ -150,6 +158,7 @@ class Obstacles {
   std::vector<GapBounds> gap_bounds_;      // by net * copper count + layer
   std::vector<std::vector<int>> net_tracks_;  // copper item ids of each net's tracks (fixed and routed; removed ones are skipped)
 
+  gpu::fixed::SceneRevision fixed_revision_;
   model::Board& b_;
   const model::DesignRules& r_;
   drc::CopperModel cm_;

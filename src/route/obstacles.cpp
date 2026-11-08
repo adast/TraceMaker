@@ -796,6 +796,7 @@ int Obstacles::via_state(Point p, Coord d, Coord drill, model::NetId net, Coord 
 }
 
 int Obstacles::add_track(int index, int owner) {
+  if (owner < 0) fixed_revision_.invalidate();
   const auto& t = b_.tracks[static_cast<std::size_t>(index)];
   drc::CopperItem it;
   it.kind = drc::ItemKind::Track;
@@ -816,6 +817,7 @@ int Obstacles::add_track(int index, int owner) {
 }
 
 int Obstacles::add_via(int index, int owner) {
+  if (owner < 0) fixed_revision_.invalidate();
   const auto& v = b_.vias[static_cast<std::size_t>(index)];
   drc::CopperItem it;
   it.kind = drc::ItemKind::Via;
@@ -843,6 +845,8 @@ int Obstacles::add_via(int index, int owner) {
 }
 
 void Obstacles::remove_item(int item) {
+  if (!cm_.items[static_cast<std::size_t>(item)].removed && cm_.items[static_cast<std::size_t>(item)].owner < 0)
+    fixed_revision_.invalidate();
   auto& it = cm_.items[static_cast<std::size_t>(item)];
   if (it.removed) return;
   it.removed = true;

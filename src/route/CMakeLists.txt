@@ -1,9 +1,9 @@
-add_library(tm_route STATIC obstacles.cpp ref_map.cpp router.cpp global_router.cpp escape.cpp escape_flow.cpp bundle.cpp fanout_heads.cpp heat_grid.cpp diff_pair.cpp bus.cpp layer_limits.cpp legalize.cpp cut_test.cpp)
+add_library(tm_route STATIC obstacles.cpp fixed_scene.cpp ref_map.cpp router.cpp global_router.cpp escape.cpp escape_flow.cpp bundle.cpp fanout_heads.cpp heat_grid.cpp diff_pair.cpp bus.cpp layer_limits.cpp legalize.cpp cut_test.cpp)
 add_library(tm::route ALIAS tm_route)
 target_link_libraries(tm_route PUBLIC tm::drc tm::model tm::geom tm::core PRIVATE tm::gpu)
 tm_set_warnings(tm_route)
 
 # Keep CPU geometric predicates free of fused floating-point contractions.
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-  set_property(SOURCE router.cpp obstacles.cpp APPEND PROPERTY COMPILE_OPTIONS -ffp-contract=off)
+  set_property(SOURCE router.cpp obstacles.cpp fixed_scene.cpp APPEND PROPERTY COMPILE_OPTIONS -ffp-contract=off)
 endif()
