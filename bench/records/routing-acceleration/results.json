@@ -1,0 +1,262 @@
+{
+  "complete": true,
+  "base_commit": "057ee8208afe76c26838ee08934906938b17c613",
+  "code_commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+  "binaries": {
+    "build/src/app/tracemaker": {
+      "bytes": 10393464,
+      "sha256": "2d788debcdbcc7fba5f4c0a18ba45fbc96f01064db0c04f404507ac7aba324c4"
+    },
+    "build/src/app/tracemaker-batch": {
+      "bytes": 9057040,
+      "sha256": "36c86378b6e629675279b5c52b20f4208223c5fbeb7a627b8d4ea4e83e147105"
+    },
+    "reference-build/src/app/tracemaker": {
+      "bytes": 10188336,
+      "sha256": "1c4b9d87b4f181e9c811df39c39d3a03557f92475da1da20c097b0626383c0da"
+    }
+  },
+  "compiler_policy": "Matched GCC14 Release/O3, ffp-contract off; nonnull/maybe-uninitialized diagnostics nonfatal; no PGO/tuning",
+  "gpu_uuid": "GPU-fc1cb2a9-3a21-72fc-3753-f29558500487",
+  "ten": [
+    {
+      "id": "Microdox-PCB_Microdox",
+      "reference_cpu_s": 127.95904849469662,
+      "candidate_cpu_s": 98.29068326950073,
+      "candidate_gpu_s": 78.04327888321131,
+      "all_exact": true,
+      "reference_gpu_s": 135.50492114387453,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "LeeChee_1800",
+      "reference_cpu_s": 238.0510459439829,
+      "candidate_cpu_s": 195.01823581475765,
+      "candidate_gpu_s": 104.30950560886413,
+      "all_exact": true,
+      "reference_gpu_s": 203.95856271218508,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "EUC-VESC_electronics_sept",
+      "reference_cpu_s": 198.5647681541741,
+      "candidate_cpu_s": 161.97657313384116,
+      "candidate_gpu_s": 101.23722320050001,
+      "all_exact": true,
+      "reference_gpu_s": 199.63565609510988,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "xmasOrn_xmasOrn",
+      "reference_cpu_s": 153.56355730537325,
+      "candidate_cpu_s": 114.02915215678513,
+      "candidate_gpu_s": 101.03191484324634,
+      "all_exact": true,
+      "reference_gpu_s": 169.3715712558478,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "Own-Mailbox-Hardware_pierre",
+      "reference_cpu_s": 173.5906956056133,
+      "candidate_cpu_s": 126.67616173252463,
+      "candidate_gpu_s": 96.26925805676728,
+      "all_exact": true,
+      "reference_gpu_s": 191.42473689466715,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "kitspace_neotron-32",
+      "reference_cpu_s": 169.6843582391739,
+      "candidate_cpu_s": 137.85924952942878,
+      "candidate_gpu_s": 99.52078092005104,
+      "all_exact": true,
+      "reference_gpu_s": 174.9631192665547,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "youtubeplaybutton_playbutton",
+      "reference_cpu_s": 192.18348164856434,
+      "candidate_cpu_s": 144.8425350310281,
+      "candidate_gpu_s": 114.06799173727632,
+      "all_exact": true,
+      "reference_gpu_s": 203.61984012741596,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "VB-IoT1_VB-IoT1_v1",
+      "reference_cpu_s": 154.35062852222472,
+      "candidate_cpu_s": 121.1290281880647,
+      "candidate_gpu_s": 83.14823107700795,
+      "all_exact": true,
+      "reference_gpu_s": 167.88194181676954,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "8088_sbc2_pcb_8088_sbc2",
+      "reference_cpu_s": 179.0034895390272,
+      "candidate_cpu_s": 133.61664723791182,
+      "candidate_gpu_s": 119.06616314314306,
+      "all_exact": true,
+      "reference_gpu_s": 175.1923991953954,
+      "all_four_modes_exact": true
+    },
+    {
+      "id": "ATMEGA328-Motor-Board_ATMEGA328_Motor_Board",
+      "reference_cpu_s": 196.96498147025704,
+      "candidate_cpu_s": 148.20885716564953,
+      "candidate_gpu_s": 121.84747460670769,
+      "all_exact": true,
+      "reference_gpu_s": 197.6830067979172,
+      "all_four_modes_exact": true
+    }
+  ],
+  "wide_sequential_s": 1981.7611043248326,
+  "wide_concurrent_s": [
+    123.39300465304404,
+    128.72108329180628
+  ],
+  "full_verification": {
+    "field_values": 286579382,
+    "fixed_values": 2303030,
+    "routed_bounds": 4623055
+  },
+  "all_artifact_work_native_oracles_exact": true,
+  "trials": [
+    {
+      "label": "ten-00-reference-cpu",
+      "wall_s": 127.95904849469662
+    },
+    {
+      "label": "ten-00-candidate-cpu",
+      "wall_s": 98.29068326950073
+    },
+    {
+      "label": "ten-00-candidate-gpu",
+      "wall_s": 78.04327888321131
+    },
+    {
+      "label": "ten-01-reference-cpu",
+      "wall_s": 238.0510459439829
+    },
+    {
+      "label": "ten-01-candidate-cpu",
+      "wall_s": 195.01823581475765
+    },
+    {
+      "label": "ten-01-candidate-gpu",
+      "wall_s": 104.30950560886413
+    },
+    {
+      "label": "ten-02-reference-cpu",
+      "wall_s": 198.5647681541741
+    },
+    {
+      "label": "ten-02-candidate-cpu",
+      "wall_s": 161.97657313384116
+    },
+    {
+      "label": "ten-02-candidate-gpu",
+      "wall_s": 101.23722320050001
+    },
+    {
+      "label": "ten-03-reference-cpu",
+      "wall_s": 153.56355730537325
+    },
+    {
+      "label": "ten-03-candidate-cpu",
+      "wall_s": 114.02915215678513
+    },
+    {
+      "label": "ten-03-candidate-gpu",
+      "wall_s": 101.03191484324634
+    },
+    {
+      "label": "ten-04-reference-cpu",
+      "wall_s": 173.5906956056133
+    },
+    {
+      "label": "ten-04-candidate-cpu",
+      "wall_s": 126.67616173252463
+    },
+    {
+      "label": "ten-04-candidate-gpu",
+      "wall_s": 96.26925805676728
+    },
+    {
+      "label": "ten-05-reference-cpu",
+      "wall_s": 169.6843582391739
+    },
+    {
+      "label": "ten-05-candidate-cpu",
+      "wall_s": 137.85924952942878
+    },
+    {
+      "label": "ten-05-candidate-gpu",
+      "wall_s": 99.52078092005104
+    },
+    {
+      "label": "ten-06-reference-cpu",
+      "wall_s": 192.18348164856434
+    },
+    {
+      "label": "ten-06-candidate-cpu",
+      "wall_s": 144.8425350310281
+    },
+    {
+      "label": "ten-06-candidate-gpu",
+      "wall_s": 114.06799173727632
+    },
+    {
+      "label": "ten-07-reference-cpu",
+      "wall_s": 154.35062852222472
+    },
+    {
+      "label": "ten-07-candidate-cpu",
+      "wall_s": 121.1290281880647
+    },
+    {
+      "label": "ten-07-candidate-gpu",
+      "wall_s": 83.14823107700795
+    },
+    {
+      "label": "ten-08-reference-cpu",
+      "wall_s": 179.0034895390272
+    },
+    {
+      "label": "ten-08-candidate-cpu",
+      "wall_s": 133.61664723791182
+    },
+    {
+      "label": "ten-08-candidate-gpu",
+      "wall_s": 119.06616314314306
+    },
+    {
+      "label": "ten-09-reference-cpu",
+      "wall_s": 196.96498147025704
+    },
+    {
+      "label": "ten-09-candidate-cpu",
+      "wall_s": 148.20885716564953
+    },
+    {
+      "label": "ten-09-candidate-gpu",
+      "wall_s": 121.84747460670769
+    },
+    {
+      "label": "full-budget-verification",
+      "wall_s": 105.05576276127249
+    },
+    {
+      "label": "wide-sequential",
+      "wall_s": 1981.7611043248326
+    },
+    {
+      "label": "wide-concurrent-a",
+      "wall_s": 123.39300465304404
+    },
+    {
+      "label": "wide-concurrent-b",
+      "wall_s": 128.72108329180628
+    }
+  ]
+}

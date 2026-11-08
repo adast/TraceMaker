@@ -1,6 +1,7 @@
 ---
 status: current
 code: [src/route, src/passes]
+reviewed: 2026-11-08
 ---
 
 # 05 — Routing
@@ -3334,3 +3335,31 @@ and with every net in a class of its own with the same values, as WholeBoard wro
 
 The split boards route exactly as the originals on both engines; D169 makes the same caches for them as for the originals. The bounded
 run here also gave the same output, but its expansion count differs, as the fields knew fewer codes.
+
+## 73. Exact routing acceleration (D170)
+
+The accepted implementations reduce repeated work without changing `(f, state key)` search order,
+charged routing work, geometric predicates or the original 16-byte search-node representation.
+Their measured effects are in [`bench/records/routing-acceleration/`](../bench/records/routing-acceleration/README.md).
+
+| Component | Implementation | Exactness constraint |
+|---|---|---|
+| Board interior raster | Row crossing intervals and prefix scans (`raster_rows.hpp`) | Same boundary and cutout classification as the scalar point test |
+| Search queue | Integer radix partitions with a tie heap (`search_queue.hpp`) | Signed `f`, unsigned state key; lower inserted priorities rebase every live entry |
+| Queue staleness | Conservative packed cost snapshot (`queue_key.hpp`) | Original stale-entry tests remain; unsupported key widths use the original representation |
+| Planar costs | Full cell-cost memoization and precomputed move masks | Cache generation includes all mutable inputs; same legal transitions and integer costs |
+| Search-node storage | Zero-backed trivial records (`zero_node_array.hpp`) | Invalid records are never read as live; generation wrap and allocation failure are covered |
+| Routed geometry | Per-net conservative copper/hole bounds (`routed_bounds.hpp`) | Skip only when bounds prove no collision; saturation or unsupported rules force the scalar check |
+
+The queue uses radix partitions from [Ahuja, Mehlhorn, Orlin and Tarjan (1990)](https://doi.org/10.1145/77600.77615).
+The equal-priority heap and explicit rebase support this router's full tie ordering and nonmonotone
+priorities; the usual monotone-heap complexity bound is not claimed for rebases.
+
+The bounds optimization is disabled for position-dependent custom rules, physical clearance and
+physical hole clearance. The fixed-geometry CUDA exporter has its own corresponding refusal checks.
+The exact check before committing routes and the bounded class caches of §72 remain in place.
+
+`RouterOptions::verify_acceleration` checks accelerated answers against the scalar paths and exposes
+positive verification counts in the route summary. It is diagnostic, not a different routing policy.
+GPU fields, ready-only immutable geometry queries and independent-board ownership are described in
+[doc 07 §9](07-gpu.md#9-exact-cuda-routing-and-independent-board-batches).

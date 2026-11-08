@@ -1,0 +1,11 @@
+{
+  "cpu": {
+    "Architecture": "x86_64",
+    "CPU(s)": "160",
+    "Model name": "Intel(R) Xeon(R) Platinum 8380 CPU @ 2.30GHz",
+    "Thread(s) per core": "2",
+    "Core(s) per socket": "40",
+    "Socket(s)": "2"
+  },
+  "gpu": "NVIDIA A100-SXM4-80GB, GPU-fc1cb2a9-3a21-72fc-3753-f29558500487, 81920 MiB, 575.51.03"
+}

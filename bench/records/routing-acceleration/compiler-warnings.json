@@ -1,0 +1,15 @@
+{
+  "code_commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+  "base_commit": "057ee8208afe76c26838ee08934906938b17c613",
+  "reference": [
+    "<toolchain>/lib/gcc/x86_64-conda-linux-gnu/14.4.0/include/c++/bits/stl_vector.h:LINE: warning: 'this' pointer is null [-Wnonnull]",
+    "<project>/src/core/units.hpp:LINE: warning: '*(long int*)((char*)&mxs + offsetof(std::optional<long int>,std::optional<long int>::<unnamed>.std::_Optional_base<long int, true, true>::<unnamed>))' may be used uninitialized [-Wmaybe-uninitialized]"
+  ],
+  "candidate": [
+    "<project>/src/core/units.hpp:LINE: warning: '*(long int*)((char*)&mxs + offsetof(std::optional<long int>,std::optional<long int>::<unnamed>.std::_Optional_base<long int, true, true>::<unnamed>))' may be used uninitialized [-Wmaybe-uninitialized]"
+  ],
+  "new_warnings": [],
+  "no_new_warnings": true,
+  "reference_log_sha256": "4cd4b751f8ba0faadbd2021cbd22cb063cd53990030f9d2e7fb5cb02c0ce4bc4",
+  "candidate_log_sha256": "8719f93649e52f1a5d0e2564773b437be664daab9f18d9d8fef6682a969b5472"
+}

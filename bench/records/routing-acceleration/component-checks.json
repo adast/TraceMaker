@@ -1,0 +1,12 @@
+{
+  "gpu-field-components": {
+    "returncode": 0,
+    "wall_s": 1.0223681833595037,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "gpu-geometry-components": {
+    "returncode": 0,
+    "wall_s": 0.8207950359210372,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -914,6 +914,34 @@ OPTIONS:
           --config TEXT       Options file to start from (if it exists) and to save to
 ```
 
+## `tracemaker-batch`
+
+```text
+Route independent boards concurrently with one selected GPU
+
+
+tracemaker-batch [OPTIONS] manifest
+
+
+POSITIONALS:
+  manifest TEXT:FILE REQUIRED JSON array of {id,input,output,work,seed}
+
+OPTIONS:
+  -h,     --help              Print this help message and exit
+          --report TEXT REQUIRED
+                              Combined result JSON
+          --workers UINT:INT in [1 - 256]
+                              Concurrent boards; one routing thread per board
+          --device INT:NONNEGATIVE
+                              Visible GPU device index
+          --no-gpu            Use CPU reference fields
+          --no-rescue{false}  Skip additional rescue passes after the requested work budget
+          --no-why-open{false}
+                              Skip the open-connection explanation pass
+          --verify-acceleration
+                              Check accelerated geometry with CPU references
+```
+
 ## `tracemaker-place`
 
 ```text

@@ -1,0 +1,29 @@
+{
+  "code_commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+  "base_commit": "057ee8208afe76c26838ee08934906938b17c613",
+  "binaries": {
+    "build/src/app/tracemaker": {
+      "bytes": 10393464,
+      "sha256": "2d788debcdbcc7fba5f4c0a18ba45fbc96f01064db0c04f404507ac7aba324c4"
+    },
+    "build/src/app/tracemaker-batch": {
+      "bytes": 9057040,
+      "sha256": "36c86378b6e629675279b5c52b20f4208223c5fbeb7a627b8d4ea4e83e147105"
+    },
+    "reference-build/src/app/tracemaker": {
+      "bytes": 10188336,
+      "sha256": "1c4b9d87b4f181e9c811df39c39d3a03557f92475da1da20c097b0626383c0da"
+    }
+  },
+  "compiler_policy": "Matched GCC14 Release/O3, ffp-contract off; nonnull/maybe-uninitialized diagnostics nonfatal; no PGO/tuning",
+  "effective_cxx_flags": [
+    "-O3",
+    "-ffp-contract=off",
+    "-Wno-error=nonnull",
+    "-Wno-error=maybe-uninitialized"
+  ],
+  "cuda_architectures": [
+    80
+  ],
+  "source_catalog_sha256": "4444044ec2dfd24a81d651c8a99366876b5c830d1493d2ff9ffb32fcdff19c50"
+}

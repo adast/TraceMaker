@@ -1,0 +1,2060 @@
+{
+  "complete": true,
+  "reference_commit": "057ee8208afe76c26838ee08934906938b17c613",
+  "candidate_commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+  "reference_binary": {
+    "bytes": 10188336,
+    "sha256": "1c4b9d87b4f181e9c811df39c39d3a03557f92475da1da20c097b0626383c0da"
+  },
+  "boards": [
+    {
+      "id": "Microdox-PCB_Microdox",
+      "wall_s": 135.50492114387453,
+      "artifacts": {
+        ".kicad_pcb": "00517e7d26ff467342cbc0a82ec0fe3975c056bf19597cdeab6bda4d60ae3bb9",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 223,
+        "connections": 223,
+        "tracks": 713,
+        "vias": 29,
+        "expansions": 244488956,
+        "pitch_mm": 0.1,
+        "failures": [],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 2,
+        "work": {
+          "cleanup": {
+            "cell_checks": 11762463,
+            "commits": 37,
+            "expansions": 55107787,
+            "field_cells": 60418234,
+            "fields": 44,
+            "fixed_checks": 12487,
+            "flood_cells": 9605177,
+            "rips": 0,
+            "searches": 69
+          },
+          "first_pass": {
+            "cell_checks": 20214536,
+            "commits": 766,
+            "expansions": 73666391,
+            "field_cells": 121438816,
+            "fields": 269,
+            "fixed_checks": 3285753,
+            "flood_cells": 13629071,
+            "rips": 0,
+            "searches": 870
+          },
+          "negotiation": {
+            "cell_checks": 17863679,
+            "commits": 44,
+            "expansions": 75169703,
+            "field_cells": 104722332,
+            "fields": 53,
+            "fixed_checks": 388777,
+            "flood_cells": 17310827,
+            "rips": 2,
+            "searches": 142
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 49840678,
+            "commits": 847,
+            "expansions": 203943881,
+            "field_cells": 286579382,
+            "fields": 366,
+            "fixed_checks": 3687017,
+            "flood_cells": 40545075,
+            "rips": 2,
+            "searches": 1081
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 11762463,
+            "commits": 37,
+            "expansions": 55107787,
+            "field_cells": 60418234,
+            "fields": 44,
+            "fixed_checks": 12487,
+            "flood_cells": 9605177,
+            "rips": 0,
+            "searches": 69
+          },
+          "first_pass": {
+            "cell_checks": 20214536,
+            "commits": 766,
+            "expansions": 73666391,
+            "field_cells": 121438816,
+            "fields": 269,
+            "fixed_checks": 3285753,
+            "flood_cells": 13629071,
+            "rips": 0,
+            "searches": 870
+          },
+          "negotiation": {
+            "cell_checks": 17863679,
+            "commits": 44,
+            "expansions": 75169703,
+            "field_cells": 104722332,
+            "fields": 53,
+            "fixed_checks": 388777,
+            "flood_cells": 17310827,
+            "rips": 2,
+            "searches": 142
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 49840678,
+            "commits": 847,
+            "expansions": 203943881,
+            "field_cells": 286579382,
+            "fields": 366,
+            "fixed_checks": 3687017,
+            "flood_cells": 40545075,
+            "rips": 2,
+            "searches": 1081
+          }
+        },
+        "time_limited": false,
+        "open": 0,
+        "completion_pct": 100.0,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 305,
+          "bends_per_connection": 0.8047,
+          "connections": 379,
+          "detour_length_mm": 3147.650729,
+          "detour_octile_mm": 2994.302457,
+          "detour_ratio": 1.0512,
+          "length_mm": 3147.650729,
+          "long_detours": 1,
+          "off_angle_segments": 149,
+          "segments": 713,
+          "short_segments": 7,
+          "stair_steps": 0,
+          "vias": 29
+        }
+      },
+      "native": {
+        "legality": [
+          "49842525"
+        ],
+        "precheck": [
+          [
+            "171",
+            "20",
+            "39744946"
+          ]
+        ],
+        "late_proof": [
+          [
+            "80",
+            "0",
+            "800129"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "74522717",
+            "0",
+            "27180012"
+          ]
+        ]
+      },
+      "log_sha256": "d7b032d0fb7bf9c6f933cf15bc207c8a4fb41c95cb736d622b84ec39458332d2"
+    },
+    {
+      "id": "LeeChee_1800",
+      "wall_s": 203.95856271218508,
+      "artifacts": {
+        ".kicad_pcb": "f08cf3a916b7a974cf0324f1661267ce4b183aacfff7e071210ae6e9fe643267",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 1123,
+        "connections": 1160,
+        "tracks": 3355,
+        "vias": 336,
+        "expansions": 291560559,
+        "pitch_mm": 0.075,
+        "failures": [
+          "/V18: U4.25 -> U4.28  (ripped up by /REXT and not routed again)",
+          "/V18: U4.21 -> U4.25  (ripped up by /HUBX+ and not routed again)",
+          "/V33: U4.9 -> U4.15  (ripped up by /DOWN4+ and not routed again)",
+          "/V33: U4.36 -> U4.42  (ripped up by /VBUSM and not routed again)",
+          "Earth: C9.2 -> U4.10  (ripped up by /DOWN4+ and not routed again)",
+          "Earth: MX_Y_1.4 -> MX_U_1.4  (ripped up by /COL7 and not routed again)",
+          "Earth: MX_I_1.4 -> MX_O_1.4  (ripped up by /COL9 and not routed again)",
+          "Earth: MX_P_1.4 -> MX_[_1.4  (ripped up by /COL11 and not routed again)",
+          "/LED+: KBR25.2 -> KBR24.2  (ripped up by /COL2 and not routed again)",
+          "/LED+: KBR53.2 -> KBR52.2  (ripped up by /COL11 and not routed again)",
+          "/LED+: KBR51.2 -> KBR50.2  (ripped up by /COL9 and not routed again)",
+          "/LED+: KBR49.2 -> KBR48.2  (ripped up by /COL7 and not routed again)",
+          "/LED+: KBR47.2 -> KBR46.2  (ripped up by /COL5 and not routed again)",
+          "/LED+: KBR78.2 -> KBR79.2  (ripped up by /COL2 and not routed again)",
+          "/LED+: KBR80.2 -> KBR81.2  (ripped up by /COL4 and not routed again)",
+          "/DOWN7+: U4.38 -> R1.2  (search budget; negotiated: search budget)",
+          "/DOWN5+: DOWN5.3 -> U4.33  (boxed in (target); escapes/neck-down: search budget; negotiated: search budget)",
+          "/COL11: U2.38 -> KBD11.2  (boxed in; escapes/neck-down: boxed in; negotiated: search budget)",
+          "/DOWN6-: DOWN6.2 -> U4.34  (boxed in (target); escapes/neck-down: search budget)",
+          "/COL10: U2.39 -> KBD10.2  (boxed in; escapes/neck-down: boxed in)",
+          "/DOWN6+: DOWN6.3 -> U4.35  (boxed in (target); escapes/neck-down: boxed in (target))",
+          "/HUBUSBD+: U4.30 -> U1.2  (search budget)",
+          "Net-(C49-Pad1): FB4.1 -> SP2_2.1  (search budget)",
+          "Net-(C48-Pad2): FB3.1 -> SP2_2.2  (search budget)",
+          "/COL9: U2.40 -> KBD9.2  (boxed in; escapes/neck-down: boxed in)",
+          "/MICMBIAS: R17.2 -> MICROPHONE1.R  (search budget)",
+          "/DOWN2+: DOWN2.3 -> U4.17  (boxed in (target); escapes/neck-down: boxed in (target))",
+          "/DOWN2-: DOWN2.2 -> U4.16  (boxed in (target); escapes/neck-down: boxed in (target))",
+          "/COL8: U2.41 -> KBD8.2  (boxed in; escapes/neck-down: boxed in)",
+          "/COL7: U2.1 -> KBD7.2  (boxed in; escapes/neck-down: boxed in)",
+          "/DOWN3+: U4.14 -> DOWN3.3  (boxed in; escapes/neck-down: boxed in)",
+          "/DOWN3-: U4.13 -> DOWN3.2  (boxed in; escapes/neck-down: boxed in)",
+          "/COL6: U2.28 -> KBD6.2  (boxed in; escapes/neck-down: search budget)",
+          "/COL4: U2.30 -> KBD63.2  (boxed in; escapes/neck-down: boxed in)",
+          "/COL3: U2.31 -> KBD62.2  (boxed in; escapes/neck-down: boxed in)",
+          "/COL2: U2.32 -> KBD61.2  (boxed in; escapes/neck-down: boxed in)",
+          "/COL1: U2.36 -> KBD41.2  (boxed in; escapes/neck-down: boxed in)"
+        ],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 2,
+        "work": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 32258024,
+            "commits": 1120,
+            "expansions": 145892730,
+            "field_cells": 663329072,
+            "fields": 608,
+            "fixed_checks": 20172773,
+            "flood_cells": 18023027,
+            "rips": 0,
+            "searches": 1265
+          },
+          "negotiation": {
+            "cell_checks": 33682760,
+            "commits": 19,
+            "expansions": 90907855,
+            "field_cells": 247408544,
+            "fields": 56,
+            "fixed_checks": 3149220,
+            "flood_cells": 36736947,
+            "rips": 15,
+            "searches": 121
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 65940784,
+            "commits": 1139,
+            "expansions": 236800585,
+            "field_cells": 910737616,
+            "fields": 664,
+            "fixed_checks": 23321993,
+            "flood_cells": 54759974,
+            "rips": 15,
+            "searches": 1386
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 32258024,
+            "commits": 1120,
+            "expansions": 145892730,
+            "field_cells": 663329072,
+            "fields": 608,
+            "fixed_checks": 20172773,
+            "flood_cells": 18023027,
+            "rips": 0,
+            "searches": 1265
+          },
+          "negotiation": {
+            "cell_checks": 33682760,
+            "commits": 19,
+            "expansions": 90907855,
+            "field_cells": 247408544,
+            "fields": 56,
+            "fixed_checks": 3149220,
+            "flood_cells": 36736947,
+            "rips": 15,
+            "searches": 121
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 65940784,
+            "commits": 1139,
+            "expansions": 236800585,
+            "field_cells": 910737616,
+            "fields": 664,
+            "fixed_checks": 23321993,
+            "flood_cells": 54759974,
+            "rips": 15,
+            "searches": 1386
+          }
+        },
+        "time_limited": false,
+        "open": 37,
+        "completion_pct": 96.81,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 1341,
+          "bends_per_connection": 0.7806,
+          "connections": 1718,
+          "detour_length_mm": 15290.128021,
+          "detour_octile_mm": 14609.590243,
+          "detour_ratio": 1.0466,
+          "length_mm": 15290.128021,
+          "long_detours": 15,
+          "off_angle_segments": 329,
+          "segments": 3355,
+          "short_segments": 273,
+          "stair_steps": 1,
+          "vias": 336
+        }
+      },
+      "native": {
+        "legality": [
+          "65944305"
+        ],
+        "precheck": [
+          [
+            "84",
+            "49",
+            "53125861"
+          ]
+        ],
+        "late_proof": [
+          [
+            "177",
+            "15",
+            "1634113"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "113245194",
+            "0",
+            "27180012"
+          ]
+        ]
+      },
+      "log_sha256": "86b185936fffa2f1221fea49f567c51f702541703196e93ca605efd0d3ffdbd0"
+    },
+    {
+      "id": "EUC-VESC_electronics_sept",
+      "wall_s": 199.63565609510988,
+      "artifacts": {
+        ".kicad_pcb": "e19198f9d682edc692c716aa8d763cba41f778e655a765c967f4bb9a8b80c294",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 760,
+        "connections": 760,
+        "tracks": 1538,
+        "vias": 95,
+        "expansions": 281834363,
+        "pitch_mm": 0.08,
+        "failures": [],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 4,
+        "work": {
+          "cleanup": {
+            "cell_checks": 29509738,
+            "commits": 110,
+            "expansions": 53692750,
+            "field_cells": 211199180,
+            "fields": 79,
+            "fixed_checks": 904864,
+            "flood_cells": 29508671,
+            "rips": 0,
+            "searches": 146
+          },
+          "first_pass": {
+            "cell_checks": 40241456,
+            "commits": 1771,
+            "expansions": 70519966,
+            "field_cells": 320040016,
+            "fields": 400,
+            "fixed_checks": 11556454,
+            "flood_cells": 35880367,
+            "rips": 0,
+            "searches": 1981
+          },
+          "negotiation": {
+            "cell_checks": 32744887,
+            "commits": 1,
+            "expansions": 59232595,
+            "field_cells": 239139464,
+            "fields": 27,
+            "fixed_checks": 757946,
+            "flood_cells": 33000014,
+            "rips": 0,
+            "searches": 38
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 102496081,
+            "commits": 1882,
+            "expansions": 183445311,
+            "field_cells": 770378660,
+            "fields": 506,
+            "fixed_checks": 13219264,
+            "flood_cells": 98389052,
+            "rips": 0,
+            "searches": 2165
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 29509738,
+            "commits": 110,
+            "expansions": 53692750,
+            "field_cells": 211199180,
+            "fields": 79,
+            "fixed_checks": 904864,
+            "flood_cells": 29508671,
+            "rips": 0,
+            "searches": 146
+          },
+          "first_pass": {
+            "cell_checks": 40241456,
+            "commits": 1771,
+            "expansions": 70519966,
+            "field_cells": 320040016,
+            "fields": 400,
+            "fixed_checks": 11556454,
+            "flood_cells": 35880367,
+            "rips": 0,
+            "searches": 1981
+          },
+          "negotiation": {
+            "cell_checks": 32744887,
+            "commits": 1,
+            "expansions": 59232595,
+            "field_cells": 239139464,
+            "fields": 27,
+            "fixed_checks": 757946,
+            "flood_cells": 33000014,
+            "rips": 0,
+            "searches": 38
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 102496081,
+            "commits": 1882,
+            "expansions": 183445311,
+            "field_cells": 770378660,
+            "fields": 506,
+            "fixed_checks": 13219264,
+            "flood_cells": 98389052,
+            "rips": 0,
+            "searches": 2165
+          }
+        },
+        "time_limited": false,
+        "open": 0,
+        "completion_pct": 100.0,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 310,
+          "bends_per_connection": 0.2663,
+          "connections": 1164,
+          "detour_length_mm": 4275.036817,
+          "detour_octile_mm": 4204.347368,
+          "detour_ratio": 1.0168,
+          "length_mm": 4275.036817,
+          "long_detours": 9,
+          "off_angle_segments": 151,
+          "segments": 1538,
+          "short_segments": 233,
+          "stair_steps": 0,
+          "vias": 95
+        }
+      },
+      "native": {
+        "legality": [
+          "102496092"
+        ],
+        "precheck": [
+          [
+            "162",
+            "3",
+            "97345645"
+          ]
+        ],
+        "late_proof": [
+          [
+            "141",
+            "40",
+            "1043407"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "94601324",
+            "0",
+            "27180012"
+          ]
+        ]
+      },
+      "log_sha256": "95e2e3162f605400e6db66066696618617c8e5bbb66f289bf8803fb1ac5ac6e3"
+    },
+    {
+      "id": "xmasOrn_xmasOrn",
+      "wall_s": 169.3715712558478,
+      "artifacts": {
+        ".kicad_pcb": "22858226df0260ac1b7adbdd9e3483b927647443fcb579e61de16be2dd072537",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 341,
+        "connections": 343,
+        "tracks": 1097,
+        "vias": 133,
+        "expansions": 298877567,
+        "pitch_mm": 0.075,
+        "failures": [
+          "/O24: D24.2 -> U5.18  (search budget; negotiated: search budget)",
+          "/O25: D25.2 -> U5.19  (search budget; negotiated: out of budget)"
+        ],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 2,
+        "work": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 11978206,
+            "commits": 334,
+            "expansions": 77962123,
+            "field_cells": 52078930,
+            "fields": 71,
+            "fixed_checks": 2658533,
+            "flood_cells": 4389950,
+            "rips": 0,
+            "searches": 393
+          },
+          "negotiation": {
+            "cell_checks": 51960159,
+            "commits": 64,
+            "expansions": 171676778,
+            "field_cells": 158333130,
+            "fields": 200,
+            "fixed_checks": 292165,
+            "flood_cells": 44848716,
+            "rips": 57,
+            "searches": 370
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 63938365,
+            "commits": 398,
+            "expansions": 249638901,
+            "field_cells": 210412060,
+            "fields": 271,
+            "fixed_checks": 2950698,
+            "flood_cells": 49238666,
+            "rips": 57,
+            "searches": 763
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 11978206,
+            "commits": 334,
+            "expansions": 77962123,
+            "field_cells": 52078930,
+            "fields": 71,
+            "fixed_checks": 2658533,
+            "flood_cells": 4389950,
+            "rips": 0,
+            "searches": 393
+          },
+          "negotiation": {
+            "cell_checks": 51960159,
+            "commits": 64,
+            "expansions": 171676778,
+            "field_cells": 158333130,
+            "fields": 200,
+            "fixed_checks": 292165,
+            "flood_cells": 44848716,
+            "rips": 57,
+            "searches": 370
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 63938365,
+            "commits": 398,
+            "expansions": 249638901,
+            "field_cells": 210412060,
+            "fields": 271,
+            "fixed_checks": 2950698,
+            "flood_cells": 49238666,
+            "rips": 57,
+            "searches": 763
+          }
+        },
+        "time_limited": false,
+        "open": 2,
+        "completion_pct": 99.42,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 500,
+          "bends_per_connection": 1.0549,
+          "connections": 474,
+          "detour_length_mm": 2123.041292,
+          "detour_octile_mm": 1691.314631,
+          "detour_ratio": 1.2553,
+          "length_mm": 2123.041292,
+          "long_detours": 27,
+          "off_angle_segments": 62,
+          "segments": 1097,
+          "short_segments": 44,
+          "stair_steps": 1,
+          "vias": 133
+        }
+      },
+      "native": {
+        "legality": [
+          "63945107"
+        ],
+        "precheck": [
+          [
+            "143",
+            "97",
+            "48523601"
+          ]
+        ],
+        "late_proof": [
+          [
+            "85",
+            "16",
+            "715065"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "150801356",
+            "0",
+            "30240014"
+          ]
+        ]
+      },
+      "log_sha256": "d37ea15588093eb3bcd703a002cdacb408bfad23267aa112217da4d2c960c8f2"
+    },
+    {
+      "id": "Own-Mailbox-Hardware_pierre",
+      "wall_s": 191.42473689466715,
+      "artifacts": {
+        ".kicad_pcb": "b997511c3d06a1915fd0891d21a1c2f3a6ef4b5ed30b145d7d07ad451b8537e7",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 396,
+        "connections": 412,
+        "tracks": 1502,
+        "vias": 267,
+        "expansions": 292264882,
+        "pitch_mm": 0.04,
+        "failures": [
+          "1V5: U2.H2 -> C33.1  (ripped up by 1V5 and not routed again)",
+          "GND: U2.J2 -> U2.G1  (ripped up by 1V5 and not routed again)",
+          "1V5: U2.D2 -> U2.F1  (ripped up by 1V5 and not routed again)",
+          "1V5: IC1.30 -> C56.1  (ripped up by DDR3_DQS0 and not routed again)",
+          "DDR3_D07: IC1.42 -> U2.H7  (ripped up by DDR3_D05 and not routed again)",
+          "DDR3_A03: IC1.65 -> U2.N2  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood); negotiated: search budget)",
+          "DDR3_A07: IC1.71 -> U2.R2  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood); negotiated: search budget)",
+          "DDR3_DM0: IC1.29 -> U2.E7  (ripped up by DDR3_DQS0 and not routed again)",
+          "DDR3_DQS0: IC1.31 -> U2.F3  (ripped up by DDR3_D05 and not routed again)",
+          "DDR3_D09: IC1.25 -> U2.C3  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood); negotiated: search budget)",
+          "DDR3_D11: IC1.24 -> U2.C2  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood); negotiated: search budget)",
+          "DDR3_D00: IC1.22 -> U2.E3  (ripped up by DDR3_D07 and not routed again)",
+          "DDR3_D04: IC1.19 -> U2.H3  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood); negotiated: search budget)",
+          "DDR3_D06: IC1.20 -> U2.G2  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood); negotiated: search budget)",
+          "RPX_P: R21.1 -> U6.6  (search budget; negotiated: search budget)",
+          "RPX_N: R20.1 -> U6.5  (search budget; negotiated: search budget)"
+        ],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 4,
+        "work": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 9218053,
+            "commits": 388,
+            "expansions": 41060776,
+            "field_cells": 149945884,
+            "fields": 397,
+            "fixed_checks": 4629560,
+            "flood_cells": 3988876,
+            "rips": 0,
+            "searches": 440
+          },
+          "negotiation": {
+            "cell_checks": 69679298,
+            "commits": 128,
+            "expansions": 190503644,
+            "field_cells": 314240432,
+            "fields": 249,
+            "fixed_checks": 1534092,
+            "flood_cells": 56711586,
+            "rips": 120,
+            "searches": 344
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 78897351,
+            "commits": 516,
+            "expansions": 231564420,
+            "field_cells": 464186316,
+            "fields": 646,
+            "fixed_checks": 6163652,
+            "flood_cells": 60700462,
+            "rips": 120,
+            "searches": 784
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 9218053,
+            "commits": 388,
+            "expansions": 41060776,
+            "field_cells": 149945884,
+            "fields": 397,
+            "fixed_checks": 4629560,
+            "flood_cells": 3988876,
+            "rips": 0,
+            "searches": 440
+          },
+          "negotiation": {
+            "cell_checks": 69679298,
+            "commits": 128,
+            "expansions": 190503644,
+            "field_cells": 314240432,
+            "fields": 249,
+            "fixed_checks": 1534092,
+            "flood_cells": 56711586,
+            "rips": 120,
+            "searches": 344
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 78897351,
+            "commits": 516,
+            "expansions": 231564420,
+            "field_cells": 464186316,
+            "fields": 646,
+            "fixed_checks": 6163652,
+            "flood_cells": 60700462,
+            "rips": 120,
+            "searches": 784
+          }
+        },
+        "time_limited": false,
+        "open": 16,
+        "completion_pct": 96.12,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 527,
+          "bends_per_connection": 0.6731,
+          "connections": 783,
+          "detour_length_mm": 2247.560939,
+          "detour_octile_mm": 2017.696631,
+          "detour_ratio": 1.1139,
+          "length_mm": 2247.560939,
+          "long_detours": 28,
+          "off_angle_segments": 294,
+          "segments": 1502,
+          "short_segments": 56,
+          "stair_steps": 0,
+          "vias": 267
+        }
+      },
+      "native": {
+        "legality": [
+          "78909197"
+        ],
+        "precheck": [
+          [
+            "94",
+            "51",
+            "59753856"
+          ]
+        ],
+        "late_proof": [
+          [
+            "140",
+            "51",
+            "946606"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "71415971",
+            "0",
+            "72480032"
+          ]
+        ]
+      },
+      "log_sha256": "00cef70dc62b30bd1702fac7e28470eb5080d77d4f46bd82c52debb751cd79f3"
+    },
+    {
+      "id": "kitspace_neotron-32",
+      "wall_s": 174.9631192665547,
+      "artifacts": {
+        ".kicad_pcb": "85bdd1462a4586a05623b37510bdc4ed0e6db4987d5f36504c1a08df2a3b14c4",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 280,
+        "connections": 293,
+        "tracks": 835,
+        "vias": 23,
+        "expansions": 260866244,
+        "pitch_mm": 0.08,
+        "failures": [
+          "/~RESET: R402.1 -> J102.9  (search budget; negotiated: search budget)",
+          "/PD6_U2RX: U101.4.8 -> J103.7  (search budget; negotiated: search budget)",
+          "/~PB6_SPI_CS2: U101.2.7 -> J101.10  (search budget; negotiated: search budget)",
+          "/PD3_VGA_BLUE: U101.3.6 -> R903.2  (search budget)",
+          "/PE0_U7RX: U101.2.3 -> U701.2  (search budget)",
+          "/PC5_U1CTS: U101.4.5 -> U1001.9  (search budget)",
+          "/PC4_U1RTS: U101.4.4 -> U1001.10  (search budget)",
+          "/PF1_VGA_RED: U101.3.1 -> R901.2  (search budget)",
+          "/~PA3_SPI_CS0: J501.2 -> U101.2.9  (search budget)",
+          "/PB7_VGA_GREEN: U101.2.6 -> R902.2  (search budget)",
+          "Net-(R503-Pad2): R503.2 -> U201.10  (search budget)",
+          "/Keyboard, Mouse and Joystick/MS_DAT: J704.7 -> U701.26  (search budget)",
+          "/Keyboard, Mouse and Joystick/KB_CLK: J704.5 -> U701.23  (search budget)"
+        ],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 4,
+        "work": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 48575879,
+            "commits": 280,
+            "expansions": 128202916,
+            "field_cells": 497712404,
+            "fields": 248,
+            "fixed_checks": 16955165,
+            "flood_cells": 38010709,
+            "rips": 0,
+            "searches": 335
+          },
+          "negotiation": {
+            "cell_checks": 29654316,
+            "commits": 0,
+            "expansions": 63360027,
+            "field_cells": 161059912,
+            "fields": 27,
+            "fixed_checks": 390441,
+            "flood_cells": 31292592,
+            "rips": 0,
+            "searches": 39
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 78230195,
+            "commits": 280,
+            "expansions": 191562943,
+            "field_cells": 658772316,
+            "fields": 275,
+            "fixed_checks": 17345606,
+            "flood_cells": 69303301,
+            "rips": 0,
+            "searches": 374
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 48575879,
+            "commits": 280,
+            "expansions": 128202916,
+            "field_cells": 497712404,
+            "fields": 248,
+            "fixed_checks": 16955165,
+            "flood_cells": 38010709,
+            "rips": 0,
+            "searches": 335
+          },
+          "negotiation": {
+            "cell_checks": 29654316,
+            "commits": 0,
+            "expansions": 63360027,
+            "field_cells": 161059912,
+            "fields": 27,
+            "fixed_checks": 390441,
+            "flood_cells": 31292592,
+            "rips": 0,
+            "searches": 39
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 78230195,
+            "commits": 280,
+            "expansions": 191562943,
+            "field_cells": 658772316,
+            "fields": 275,
+            "fixed_checks": 17345606,
+            "flood_cells": 69303301,
+            "rips": 0,
+            "searches": 374
+          }
+        },
+        "time_limited": false,
+        "open": 13,
+        "completion_pct": 95.56,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 479,
+          "bends_per_connection": 1.4299,
+          "connections": 335,
+          "detour_length_mm": 5745.385518,
+          "detour_octile_mm": 5564.979698,
+          "detour_ratio": 1.0324,
+          "length_mm": 5745.385518,
+          "long_detours": 1,
+          "off_angle_segments": 30,
+          "segments": 835,
+          "short_segments": 16,
+          "stair_steps": 0,
+          "vias": 23
+        }
+      },
+      "native": {
+        "legality": [
+          "78230195"
+        ],
+        "precheck": [
+          [
+            "26",
+            "0",
+            "68497467"
+          ]
+        ],
+        "late_proof": [
+          [
+            "80",
+            "0",
+            "805834"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "115055199",
+            "0",
+            "27180012"
+          ]
+        ]
+      },
+      "log_sha256": "26fa3623da2f9655348a94a377b1c3e92ee244db24dafc2d164ba960c8379212"
+    },
+    {
+      "id": "youtubeplaybutton_playbutton",
+      "wall_s": 203.61984012741596,
+      "artifacts": {
+        ".kicad_pcb": "6a81737ed5bcdb67f3082bcaa8b368616a82ab74d997c69a9d4ffcead50a7d59",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 390,
+        "connections": 400,
+        "tracks": 1064,
+        "vias": 245,
+        "expansions": 351164765,
+        "pitch_mm": 0.055,
+        "failures": [
+          "/CB4: D64.1 -> U4.10  (ripped up by /CB3 and not routed again)",
+          "/CB6: D96.1 -> U4.12  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: search budget)",
+          "USB_HOST_EN: U2.41 -> R2.2  (skipped: identical earlier attempt failed (nogood); negotiated: skipped: identical earlier attempt failed (nogood))",
+          "/CA4: D56.1 -> U4.24  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: search budget)",
+          "/CA5: D72.1 -> U4.25  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: search budget)",
+          "/CA6: D88.1 -> U4.26  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: search budget)",
+          "/CA7: D104.1 -> U4.27  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: search budget)",
+          "SDA: U2.31 -> R10.1  (out of budget; negotiated: out of budget)",
+          "SCL: U2.32 -> R9.1  (search budget; negotiated: search budget)",
+          "/BUT2: U2.27 -> SW3.1  (search budget; negotiated: search budget)"
+        ],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 2,
+        "work": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 13369516,
+            "commits": 387,
+            "expansions": 46154895,
+            "field_cells": 147950230,
+            "fields": 112,
+            "fixed_checks": 10893156,
+            "flood_cells": 9376698,
+            "rips": 0,
+            "searches": 435
+          },
+          "negotiation": {
+            "cell_checks": 87248196,
+            "commits": 29,
+            "expansions": 202689315,
+            "field_cells": 407954686,
+            "fields": 190,
+            "fixed_checks": 2943502,
+            "flood_cells": 92943857,
+            "rips": 24,
+            "searches": 264
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 100617712,
+            "commits": 416,
+            "expansions": 248844210,
+            "field_cells": 555904916,
+            "fields": 302,
+            "fixed_checks": 13836658,
+            "flood_cells": 102320555,
+            "rips": 24,
+            "searches": 699
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 13369516,
+            "commits": 387,
+            "expansions": 46154895,
+            "field_cells": 147950230,
+            "fields": 112,
+            "fixed_checks": 10893156,
+            "flood_cells": 9376698,
+            "rips": 0,
+            "searches": 435
+          },
+          "negotiation": {
+            "cell_checks": 87248196,
+            "commits": 29,
+            "expansions": 202689315,
+            "field_cells": 407954686,
+            "fields": 190,
+            "fixed_checks": 2943502,
+            "flood_cells": 92943857,
+            "rips": 24,
+            "searches": 264
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 100617712,
+            "commits": 416,
+            "expansions": 248844210,
+            "field_cells": 555904916,
+            "fields": 302,
+            "fixed_checks": 13836658,
+            "flood_cells": 102320555,
+            "rips": 24,
+            "searches": 699
+          }
+        },
+        "time_limited": false,
+        "open": 10,
+        "completion_pct": 97.5,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 258,
+          "bends_per_connection": 0.3851,
+          "connections": 670,
+          "detour_length_mm": 2670.858084,
+          "detour_octile_mm": 2572.985935,
+          "detour_ratio": 1.038,
+          "length_mm": 2670.858084,
+          "long_detours": 27,
+          "off_angle_segments": 252,
+          "segments": 1064,
+          "short_segments": 78,
+          "stair_steps": 0,
+          "vias": 245
+        }
+      },
+      "native": {
+        "legality": [
+          "100621653"
+        ],
+        "precheck": [
+          [
+            "77",
+            "56",
+            "101905386"
+          ]
+        ],
+        "late_proof": [
+          [
+            "92",
+            "54",
+            "415169"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "74929983",
+            "0",
+            "132840366"
+          ]
+        ]
+      },
+      "log_sha256": "ccdb6536070c6e5e8b0bd764268ce8e5ffd7520243413ab4ffe3a6d7683f0300"
+    },
+    {
+      "id": "VB-IoT1_VB-IoT1_v1",
+      "wall_s": 167.88194181676954,
+      "artifacts": {
+        ".kicad_pcb": "72bc530abd0bcf7d0441123dc97b0b4b95ad18eea5760889292fae10893ba57b",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 515,
+        "connections": 584,
+        "tracks": 2626,
+        "vias": 308,
+        "expansions": 210476035,
+        "pitch_mm": 0.05,
+        "failures": [
+          "Net-(R45-Pad1): R45.1 -> U5.13  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "5V_IN: U1.102 -> C8.1  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "VDD4P2: U1.101 -> C43.2  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/D4: U1.47 -> U2.8  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/D5: U1.48 -> U2.10  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "Net-(L1-Pad2): U1.99 -> L1.2  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN2/LCD_D01: U1.3 -> P4.8  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN5/LCD_D04: U1.6 -> P4.11  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/D6: U1.49 -> U2.11  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN15/LCD_D14: U1.29 -> P4.25  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN13/LCD_D12: U1.27 -> P4.23  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN10/LCD_D09: U1.23 -> P4.18  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN9/LCD_D08/SSP2_MISO: U1.22 -> P4.17  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN18/LCD_D17/USB_EN: U1.20 -> P4.28  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/D7: U1.50 -> U2.13  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "Net-(R26-Pad1): R26.1 -> U5.3  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN20/LCD_VSYNC: U1.16 -> P4.33  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/DQM0: U1.46 -> U2.20  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN23/LCD_DISP: U1.12 -> P4.31  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/DQS1: U1.40 -> U2.51  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "IMX_ATM_SCL: U1.34 -> CON9.3  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN22/LCD_EN/I2C_SCL: U1.11 -> P4.34  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/A7: U1.69 -> U2.38  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN15/LCD_D14: U1.29 -> CON2.3  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/A6: U1.70 -> U2.37  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/A5: U1.71 -> U2.36  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/WEN: U1.77 -> U2.21  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "TOUCH_RST: U1.33 -> CON2.10  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/CLKN: U1.37 -> U2.46  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/BA1: U1.80 -> U2.27  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/CLK: U1.36 -> U2.45  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/RASN: U1.62 -> U2.23  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/A0: U1.76 -> U2.29  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/A1: U1.75 -> U2.30  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/A2: U1.74 -> U2.31  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN2/LCD_D01: P4.8 -> R43.1  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/A3: U1.73 -> U2.32  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "MODEM_RINGING: U1.81 -> U7.5  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "MODEM_NET_ON: U1.82 -> U7.6  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN12/LCD_D11: U1.25 -> CON2.13  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/HPR: U1.109 -> CON2.8  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "RX_FROM_MODEM: U1.128 -> CON2.5  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN13/LCD_D12: U1.27 -> CON2.14  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "LCD_USB_EN: U1.91 -> U9.4  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/MODEM_RI: IC1.4 -> U7.12  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "RX_FROM_MODEM: U1.128 -> U7.3  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "TX_TO_MODEM: U1.127 -> U7.4  (search budget)",
+          "IMX_ATM_SCL: U1.34 -> P3.6  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "TOUCH_RST: U1.33 -> P3.3  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN16/LCD_D15: U1.28 -> CON2.17  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "3V3_MODEM: C71.2 -> L5.2  (search budget)",
+          "ADXL_INT: IC2.14 -> U8.8  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "5V_IN: U1.102 -> CON2.1  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "DEBUG: U1.89 -> U_DEBUG135.4  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "SSP1_DATA3: U1.87 -> SD/MMC1.2  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "SSP1_SCK: U1.90 -> SD/MMC1.5  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "SSP1_CMD: U1.83 -> SD/MMC1.3  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/LIN1_INR: U1.114 -> CON2.20  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "SSP1_DATA0: U1.84 -> R-MAT1.1.2  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "SSP1_DATA1: U1.85 -> R-MAT1.2.2  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/NETLIGHT: IC1.52 -> U7.11  (boxed in (target); escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN33/LRADC0: U1.108 -> CON2.22  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN34/MIC: U1.116 -> CON2.21  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "RX_FROM_MODEM: U7.3 -> R52.2  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "MODEM_RINGING: U7.5 -> CON2.27  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "/PIN32/LRADC1: U1.107 -> CON2.23  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "TX_TO_MODEM: U7.4 -> R53.2  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "MODEM_NET_ON: U7.6 -> CON2.28  (boxed in; escapes/neck-down: skipped: identical earlier attempt failed (nogood))",
+          "Net-(D4-Pad3): D4.3 -> U_DEBUG135.1  (search budget)"
+        ],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 4,
+        "work": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 21067979,
+            "commits": 515,
+            "expansions": 98595873,
+            "field_cells": 436187308,
+            "fields": 534,
+            "fixed_checks": 7706425,
+            "flood_cells": 9143332,
+            "rips": 0,
+            "searches": 669
+          },
+          "negotiation": {
+            "cell_checks": 34602321,
+            "commits": 50,
+            "expansions": 72728696,
+            "field_cells": 131589024,
+            "fields": 92,
+            "fixed_checks": 840918,
+            "flood_cells": 30008134,
+            "rips": 69,
+            "searches": 174
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 55670300,
+            "commits": 565,
+            "expansions": 171324569,
+            "field_cells": 567776332,
+            "fields": 626,
+            "fixed_checks": 8547343,
+            "flood_cells": 39151466,
+            "rips": 69,
+            "searches": 843
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 21067979,
+            "commits": 515,
+            "expansions": 98595873,
+            "field_cells": 436187308,
+            "fields": 534,
+            "fixed_checks": 7706425,
+            "flood_cells": 9143332,
+            "rips": 0,
+            "searches": 669
+          },
+          "negotiation": {
+            "cell_checks": 34602321,
+            "commits": 50,
+            "expansions": 72728696,
+            "field_cells": 131589024,
+            "fields": 92,
+            "fixed_checks": 840918,
+            "flood_cells": 30008134,
+            "rips": 69,
+            "searches": 174
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 55670300,
+            "commits": 565,
+            "expansions": 171324569,
+            "field_cells": 567776332,
+            "fields": 626,
+            "fixed_checks": 8547343,
+            "flood_cells": 39151466,
+            "rips": 69,
+            "searches": 843
+          }
+        },
+        "time_limited": false,
+        "open": 69,
+        "completion_pct": 88.18,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 860,
+          "bends_per_connection": 0.561,
+          "connections": 1533,
+          "detour_length_mm": 4876.050502,
+          "detour_octile_mm": 4557.754588,
+          "detour_ratio": 1.0698,
+          "length_mm": 4876.050502,
+          "long_detours": 21,
+          "off_angle_segments": 986,
+          "segments": 2626,
+          "short_segments": 201,
+          "stair_steps": 15,
+          "vias": 308
+        }
+      },
+      "native": {
+        "legality": [
+          "55677296"
+        ],
+        "precheck": [
+          [
+            "88",
+            "51",
+            "38037510"
+          ]
+        ],
+        "late_proof": [
+          [
+            "141",
+            "36",
+            "1113956"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "41530352",
+            "0",
+            "36240016"
+          ]
+        ]
+      },
+      "log_sha256": "6bcdc8066ce782422f063eff00637e9d70c53c0636af1f653211a5d412f66877"
+    },
+    {
+      "id": "8088_sbc2_pcb_8088_sbc2",
+      "wall_s": 175.1923991953954,
+      "artifacts": {
+        ".kicad_pcb": "fe729fd25e1ab13e95246655b7ef407b1fde91d7b73ed851bb89b3b25f05bbc1",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 277,
+        "connections": 328,
+        "tracks": 770,
+        "vias": 51,
+        "expansions": 345040027,
+        "pitch_mm": 0.05,
+        "failures": [
+          "/D2: U2.13 -> U14.17  (search budget)",
+          "/D3: U2.15 -> U12.5  (search budget)",
+          "/D6: U1.10 -> U13.3  (search budget)",
+          "/D5: U1.11 -> U13.4  (search budget)",
+          "/D4: U1.12 -> U13.5  (search budget)",
+          "/D3: U1.13 -> U13.6  (search budget)",
+          "/D2: U1.14 -> U13.7  (search budget)",
+          "/D1: U1.15 -> U13.8  (search budget)",
+          "/nWR: U5.18 -> U3.29  (search budget)",
+          "/nRD: U1.32 -> U5.21  (search budget)",
+          "/A13: U1.3 -> U3.28  (search budget)",
+          "/A12: U3.4 -> U2.2  (search budget)",
+          "/A11: U3.25 -> U2.23  (search budget)",
+          "/A10: U3.23 -> U2.21  (search budget)",
+          "/A9: U3.26 -> U2.24  (search budget)",
+          "/A8: U3.27 -> U2.25  (search budget)",
+          "/D7: U3.21 -> U2.19  (search budget)",
+          "/D6: U3.20 -> U2.18  (search budget)",
+          "/D5: U3.19 -> U2.17  (search budget)",
+          "/D4: U3.18 -> U2.16  (search budget)",
+          "/D3: U3.17 -> U2.15  (search budget)",
+          "/D2: U3.15 -> U2.13  (search budget)",
+          "/D1: U3.14 -> U2.12  (search budget)",
+          "/D0: U3.13 -> U2.11  (search budget)",
+          "/A7: U2.3 -> U3.5  (search budget)",
+          "/A6: U2.4 -> U3.6  (search budget)",
+          "/A5: U2.5 -> U3.7  (search budget)",
+          "/A3: U2.7 -> U3.9  (search budget)",
+          "/A2: U2.8 -> U3.10  (search budget)",
+          "/A1: U2.9 -> U3.11  (search budget)",
+          "/A0: U2.10 -> U3.12  (search budget)",
+          "/IO/nM: U16.6 -> U15.4  (search budget)",
+          "/A15: U1.39 -> U3.31  (search budget)",
+          "/A8: U1.8 -> U3.27  (search budget)",
+          "/nROMEN: U2.20 -> U15.12  ()",
+          "/IN7: I7.2 -> P1.18  ()",
+          "/nIODEV1_EN: U5.14 -> U16.14  ()",
+          "/IO/nM: U1.28 -> U16.6  ()",
+          "Net-(U5-Pad11): U5.11 -> U6.5  ()",
+          "Net-(U5-Pad10): U5.10 -> U6.1  ()",
+          "/IODEV0_WREN: U13.11 -> U17.2  ()",
+          "/A17: U3.30 -> U11.18  ()",
+          "Net-(U5-Pad37): U5.38 -> U6.2  ()",
+          "Net-(U5-Pad33): U5.33 -> U6.10  ()",
+          "Net-(U5-Pad32): U5.32 -> U6.11  ()",
+          "Net-(U5-Pad36): U5.36 -> U6.3  ()",
+          "/A16: U3.2 -> U11.19  ()",
+          "/A18: U3.1 -> U11.17  ()",
+          "/A19: U11.16 -> U15.1  ()",
+          "/nIODEV0_WREN: U17.1 -> U19.3  ()",
+          "/ALE: U1.25 -> U12.11  ()"
+        ],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 2,
+        "work": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 72916357,
+            "commits": 277,
+            "expansions": 279572039,
+            "field_cells": 407171050,
+            "fields": 313,
+            "fixed_checks": 15283575,
+            "flood_cells": 65467988,
+            "rips": 0,
+            "searches": 423
+          },
+          "negotiation": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 72916357,
+            "commits": 277,
+            "expansions": 279572039,
+            "field_cells": 407171050,
+            "fields": 313,
+            "fixed_checks": 15283575,
+            "flood_cells": 65467988,
+            "rips": 0,
+            "searches": 423
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 72916357,
+            "commits": 277,
+            "expansions": 279572039,
+            "field_cells": 407171050,
+            "fields": 313,
+            "fixed_checks": 15283575,
+            "flood_cells": 65467988,
+            "rips": 0,
+            "searches": 423
+          },
+          "negotiation": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 72916357,
+            "commits": 277,
+            "expansions": 279572039,
+            "field_cells": 407171050,
+            "fields": 313,
+            "fixed_checks": 15283575,
+            "flood_cells": 65467988,
+            "rips": 0,
+            "searches": 423
+          }
+        },
+        "time_limited": false,
+        "open": 51,
+        "completion_pct": 84.45,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 375,
+          "bends_per_connection": 1.087,
+          "connections": 345,
+          "detour_length_mm": 4999.972195,
+          "detour_octile_mm": 4843.811901,
+          "detour_ratio": 1.0322,
+          "length_mm": 4999.972195,
+          "long_detours": 1,
+          "off_angle_segments": 47,
+          "segments": 770,
+          "short_segments": 17,
+          "stair_steps": 0,
+          "vias": 51
+        }
+      },
+      "native": {
+        "legality": [
+          "72916357"
+        ],
+        "precheck": [
+          [
+            "36",
+            "0",
+            "64334052"
+          ]
+        ],
+        "late_proof": [
+          [
+            "115",
+            "2",
+            "1133936"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "210619511",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "log_sha256": "a255079c3a563e038b93d8efa95042ef7caf6b894da362969ed5cd76f4c7c4a3"
+    },
+    {
+      "id": "ATMEGA328-Motor-Board_ATMEGA328_Motor_Board",
+      "wall_s": 197.6830067979172,
+      "artifacts": {
+        ".kicad_pcb": "e3dbe0b4dcecb2f297fc6ce35196920d8fe0fefc40a6f506db8287b7a6b0f08f",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      },
+      "signature": {
+        "routed": 453,
+        "connections": 465,
+        "tracks": 2444,
+        "vias": 321,
+        "expansions": 358422759,
+        "pitch_mm": 0.075,
+        "failures": [
+          "DO1: JP11.2 -> U12.3  (boxed in; escapes/neck-down: boxed in; negotiated: boxed in; fixed copper encloses the pin)",
+          "DO2: JP12.2 -> U13.3  (boxed in; escapes/neck-down: boxed in; negotiated: boxed in; fixed copper encloses the pin)",
+          "uC_DI2: U10.3 -> JP9.2  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "uC_DI3: U11.3 -> JP10.2  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "uC_DI1: U9.3 -> JP8.2  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "Net-(JP8-Pad1): U9.1 -> JP8.1  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "Net-(JP10-Pad1): U11.1 -> JP10.1  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "Net-(JP11-Pad1): U12.1 -> JP11.1  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "Net-(JP9-Pad1): U10.1 -> JP9.1  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "Net-(JP12-Pad1): U13.1 -> JP12.1  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "DO2: P15.2 -> JP12.2  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)",
+          "DO1: P15.3 -> JP11.2  (boxed in (target); escapes/neck-down: boxed in (target); negotiated: boxed in (target); fixed copper encloses the pin)"
+        ],
+        "variant": 0,
+        "variant_name": "",
+        "copper_layers": 2,
+        "work": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 28798559,
+            "commits": 915,
+            "expansions": 91395918,
+            "field_cells": 137811650,
+            "fields": 356,
+            "fixed_checks": 5114836,
+            "flood_cells": 22395935,
+            "rips": 0,
+            "searches": 1145
+          },
+          "negotiation": {
+            "cell_checks": 53233858,
+            "commits": 120,
+            "expansions": 202150634,
+            "field_cells": 204795898,
+            "fields": 276,
+            "fixed_checks": 5153367,
+            "flood_cells": 42480272,
+            "rips": 102,
+            "searches": 614
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 82032417,
+            "commits": 1035,
+            "expansions": 293546552,
+            "field_cells": 342607548,
+            "fields": 632,
+            "fixed_checks": 10268203,
+            "flood_cells": 64876207,
+            "rips": 102,
+            "searches": 1759
+          }
+        },
+        "work_all_variants": {
+          "cleanup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "first_pass": {
+            "cell_checks": 28798559,
+            "commits": 915,
+            "expansions": 91395918,
+            "field_cells": 137811650,
+            "fields": 356,
+            "fixed_checks": 5114836,
+            "flood_cells": 22395935,
+            "rips": 0,
+            "searches": 1145
+          },
+          "negotiation": {
+            "cell_checks": 53233858,
+            "commits": 120,
+            "expansions": 202150634,
+            "field_cells": 204795898,
+            "fields": 276,
+            "fixed_checks": 5153367,
+            "flood_cells": 42480272,
+            "rips": 102,
+            "searches": 614
+          },
+          "setup": {
+            "cell_checks": 0,
+            "commits": 0,
+            "expansions": 0,
+            "field_cells": 0,
+            "fields": 0,
+            "fixed_checks": 0,
+            "flood_cells": 0,
+            "rips": 0,
+            "searches": 0
+          },
+          "total": {
+            "cell_checks": 82032417,
+            "commits": 1035,
+            "expansions": 293546552,
+            "field_cells": 342607548,
+            "fields": 632,
+            "fixed_checks": 10268203,
+            "flood_cells": 64876207,
+            "rips": 102,
+            "searches": 1759
+          }
+        },
+        "time_limited": false,
+        "open": 12,
+        "completion_pct": 97.42,
+        "style": {
+          "acute_angles": 0,
+          "arcs": 0,
+          "bends": 823,
+          "bends_per_connection": 0.6169,
+          "connections": 1334,
+          "detour_length_mm": 5018.947345,
+          "detour_octile_mm": 4177.518649,
+          "detour_ratio": 1.2014,
+          "length_mm": 5018.947345,
+          "long_detours": 22,
+          "off_angle_segments": 845,
+          "segments": 2444,
+          "short_segments": 184,
+          "stair_steps": 7,
+          "vias": 321
+        }
+      },
+      "native": {
+        "legality": [
+          "82049413"
+        ],
+        "precheck": [
+          [
+            "303",
+            "188",
+            "63324855"
+          ]
+        ],
+        "late_proof": [
+          [
+            "199",
+            "61",
+            "1551352"
+          ]
+        ],
+        "failed_search": [
+          [
+            "0",
+            "98609355",
+            "0",
+            "41017051"
+          ]
+        ]
+      },
+      "log_sha256": "b32cae2da9d2b899f83ac0a9c0570669dc8e3ff36460fb81a34782ae610eb012"
+    }
+  ],
+  "all_artifact_work_native_oracles_exact": true
+}

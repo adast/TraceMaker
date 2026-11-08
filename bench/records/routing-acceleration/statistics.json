@@ -1,0 +1,11 @@
+{
+  "code_commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+  "base_commit": "057ee8208afe76c26838ee08934906938b17c613",
+  "cpu_only_speedup_median": 1.314343667744319,
+  "original_gpu_to_candidate_gpu_median": 1.771565214900221,
+  "original_cpu_to_candidate_gpu_median": 1.6949147477604434,
+  "candidate_cpu_to_candidate_gpu_median": 1.2928219554900933,
+  "wide_sequential_s": 1981.7611043248326,
+  "wide_concurrent_median_s": 126.05704397242516,
+  "wide_throughput_speedup": 15.721145299570411
+}

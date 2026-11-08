@@ -9,6 +9,7 @@ Recipes for one job each, for people who already know what they want to do.
 
 - [Build and test](build-and-test.md): presets, compilers, sanitizers, which tests skip and why.
 - [Run kicad-cli from Docker](kicad-cli-docker.md): KiCad's DRC without installing KiCad.
+- [Route independent boards in parallel](board-batches.md): manifest, outputs, progress and exact comparisons.
 - [Use the GPUs](gpu.md): check, choose and share devices; build for CUDA 12.
 - [Read a run report](run-report.md): what a route did, what is open and why, and where each number comes from.
 - [Watch runs live](live-page.md): every tracemaker process and bench run on the machine, updated once a second.

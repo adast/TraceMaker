@@ -1,6 +1,7 @@
 ---
 status: current
 code: [src/gpu]
+reviewed: 2026-11-08
 ---
 
 # 07 — GPU acceleration
@@ -193,3 +194,52 @@ Freerouting fixtures fetched. Records: `bench/records/macos15/`.
 
 The Linux comparison uses what `boards.jsonl` keeps, not the routed files, which stay on the machine that made
 them (`compare_boards.py` in the records).
+
+## 9. Exact CUDA routing and independent-board batches
+
+D170 adds two CUDA accelerators to the normal routing code and a batch application. These are the
+implemented paths; the other workload proposals in §2 do not imply a GPU A* implementation.
+
+### Fields
+
+`field_cuda.cu` computes the same integer cost-to-go field as the CPU reference. A warp performs a
+segmented prefix-min on each line, carries the result between 32-cell blocks and scans in both
+directions. Four direction sweeps and via relaxation repeat to convergence. A cooperative launch
+keeps rounds and their convergence tests on the device. Devices without cooperative launch use
+ordinary ordered kernels. The round limit and existing CPU failure path remain conservative.
+There is no floating-point approximation and no changed search heuristic.
+
+The optimized CUDA solver is the default for all field sizes. CPU and Metal keep the 500,000-cell
+backend cutoff; an explicit `--gpu-field-min-cells N` overrides the cutoff for either backend.
+This preserves the CPU/Metal size policy while avoiding a cutoff chosen for the older CUDA solver.
+
+### Immutable fixed geometry
+
+`route/fixed_scene.cpp` exports a scene through explicit `Obstacles` APIs. Its full context includes
+owner/revision, layer, net, widths, margins and routing flags. Scene revisions are unique; fixed-copper
+mutations invalidate them. The exporter conservatively refuses via probes and position-dependent
+custom or physical-clearance rules, which continue through the CPU predicate.
+
+`gpu/fixed/AsyncSession` owns its stream, events, pinned buffers, device scene and asynchronous
+query buffers. Each router owns a `Prefetch`; its tile broker retains at most 64 scenes by default.
+The current track query can consume only an already-ready tile answer. A pending tile never blocks
+the router or publishes speculative answers into the router's obstacle cache. The CPU computes a
+miss immediately. Exact geometry, net ownership and invalidation rules stay the same regardless
+of when a GPU result arrives. Failed sessions drain their asynchronous work before releasing storage
+and disable that prefetch instance; routing continues on the CPU.
+
+The CPU geometry index is shared only as a cache of pure immutable geometry values with full equality
+checks. Mutable routed geometry, A* queue operations, rip-up, commit checks and route decisions remain
+on the CPU. No shared GPU A* service or speculative search result is involved.
+
+### Independent boards
+
+`tracemaker-batch` schedules 1–256 independent board jobs with one host routing thread per board.
+Each board owns its router, rule engine, mutable state and output files. They share the selected
+GPU through direct CUDA calls, with per-thread field storage and per-router geometry resources.
+Actual routing intervals and peak concurrency are recorded; throughput is measured against an actual
+sequential run of the same manifest and binary.
+
+See [the batch recipe](how-to/board-batches.md) for input/output contracts and
+[the benchmark record](../bench/records/routing-acceleration/README.md) for separate CPU, single-board
+GPU and 32-board GPU results. The 256-worker interface has not been certified as a 256-board memory/performance result.

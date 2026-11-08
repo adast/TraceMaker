@@ -1,0 +1,426 @@
+{
+  "ten": [
+    {
+      "id": "Microdox-PCB_Microdox",
+      "work": 242000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "00343c0dab28e06fb8592686c672eb5771a9a9fb4030ce9eea1d6c03a8b1e630",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "LeeChee_1800",
+      "work": 291000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "4e3c35959f56fa2a6066d539ffdab4744e8321639b34aacc3ef6dc162025e759",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "EUC-VESC_electronics_sept",
+      "work": 281000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "77534cfe05a2a3770216689c677c6f8a17089d547fff246174da8899120e4c73",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "xmasOrn_xmasOrn",
+      "work": 296000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "8b1dd7faa13bc1168ed2e2d83758b1e7c0984646aa0e41c9f4b60d72e5b0e2e1",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "Own-Mailbox-Hardware_pierre",
+      "work": 290000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "cff104b1551e4992d1230d4fe09550ad4bf86dafb99c899573f32f20e7fa35c2",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "kitspace_neotron-32",
+      "work": 258000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "dc9927d64926d02c35b1db702305753d3a547b0c2f17d472aa6e4454f5b6e172",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "youtubeplaybutton_playbutton",
+      "work": 347000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "70e83141f81bf187bf6d74ee9c33c42b0339f71fe170f52aaa264d6a1366d1e5",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "VB-IoT1_VB-IoT1_v1",
+      "work": 210000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "8c051311a0571f7503f1637816861a5db8a83ec18b36ded600520bc3be3348fb",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "8088_sbc2_pcb_8088_sbc2",
+      "work": 342000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "51d1098206980b01827fe8d0ec3b50077947a3a6a882a765aeb7cd5712daf6bc",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "ATMEGA328-Motor-Board_ATMEGA328_Motor_Board",
+      "work": 357000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "3a90b66e0cd0bb8b565822ea029c407ab2a7e5d1fb9a3547f2c4fcfd54e2aac7",
+        ".kicad_pro": null,
+        ".kicad_dru": null
+      }
+    }
+  ],
+  "wide": [
+    {
+      "id": "05c72f49a9215a4af902dcfe04b835003d957a97e14886058532e855ab5144e7",
+      "work": 292000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "200a737acb22e4339a35f2f2788df4feb640e5c78672eda46a1f4a652385e6c6",
+        ".kicad_pro": "4ee42f4a486b2922f92e8d14aa05f83b9245ec1c1665e07f7c709a7bb107603e",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "0dbe0fa055e49b463f49d2687b4e5825a115a0d12407206d490291f2107244f7",
+      "work": 188000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "f7bef7b0f72cc7e3e1241d3c604d84e5e0e72dae70f4dad83cc44cb8947f0c14",
+        ".kicad_pro": "5c935fd38243479f695bc76fd097f06a39671d754193cd687910a900f0ae3608",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "2749e07ca6cab20abd03633f2fa1942a3397ce23ab5238563f8acf33b18a48f8",
+      "work": 184000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "58cd1b041f11ef873c7a5de135c0b497b28d28eaff238b4eb5530686165240a8",
+        ".kicad_pro": "25b6c226955fbcf80b253d53268baa1037c047e769cd5d7c996f7223f59fd71e",
+        ".kicad_dru": "cbff9fbfb6df5b22c51b37aa2ca2e2725fd35e1d667d1d4304631ce5f87197d4"
+      }
+    },
+    {
+      "id": "1c97e45a842af16591928cc9f3484385cf0c73c9838903ca8be3bc6c5ff334ec",
+      "work": 185000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "d56975e835ab5ce27ee7d4ed999983ee8491e2ead1ef60328d4dbde2bb113262",
+        ".kicad_pro": "2ee80325f89775a8e269a037f8a1ad53f982252b90f1e2a00bdada4f67302555",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "34071303c0071bd434cb16929ce3db2595b1906d0948c0b6a9b9e0232ab0d237",
+      "work": 292000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "4851c51a129f389671bdfea874304faeedf3aa5dee549066f494f0045be05a91",
+        ".kicad_pro": "1713c761bc6a94a6a3305b571c5d209ca9c3a3c8385b9571e3130b0a4dc9c3c5",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "27f70abca19bcd93f6a292500d575ddeafd63af4713c94a725fcfcb7b09efa5f",
+      "work": 298000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "c883dec5e58f65813ab5211b7a87f9dcd565034ac7faed45585a4e996c4b66f8",
+        ".kicad_pro": "9e3bc65585d5e54fcd7b6cc53ddd513505062f52e85749e2af3b650ee5168c1b",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "0abc0e64b6ba3271148e2af5231381e6da5c5be370be7210ce1f6e31b54af4d0",
+      "work": 265000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "7f1d11122d20a986282218031d0661fa76e64f55a47bc8c7896de739218890c7",
+        ".kicad_pro": "5257c88cd8786262851abf5330ffd045e69e02ad0ffd54081178e38f4dcc2e5c",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "02e1b26e6f25b2ab825d45bb8c4fe6d489893c9fa48da8a9087a015cbccca3a4",
+      "work": 184000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "fdd70d96d28b8543810b46ae1913ff7c623d3368665d0c0e5cd6e9523093334d",
+        ".kicad_pro": "0f4602bb2abc431471ce4fae89fc17c6176d72bed35c7bece760940d9f12f132",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "1998b47ded2245d217e75ef7f55960b20332edf9abe02fd62e31008cd5d3d4b2",
+      "work": 214000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "82a62dde26f91733f1cc8cb9f385d514aa26bbabdd8e8e3568c6520dde4bc338",
+        ".kicad_pro": "40c0a59aa2db52f319d8b9a300f31405f392eb7d0d00b20945f77822672aab11",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "2ce685cc276a7be093b9a767d5369fbaa1d8dd07ab9b6681b7b657910396ec37",
+      "work": 211000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "57b20424dbdcf20868e215f291f43df54f2ae15955881747dac6460b2191d66d",
+        ".kicad_pro": "16690c98d06f3ac65cb3a09beed89b898f3391ec1f892400d3e3c0a1c9a2ac0d",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "17316fe14386e79fad3d3c89897f4ac9ee839d2d81114b937b606e8d15615e7a",
+      "work": 270000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "6a44daf4d19cacd52e1f279c09b9522cd0b53715927579a3104025f1e0e6ca6a",
+        ".kicad_pro": "4bd347c7d768beb718bd5485fe2081276e7e7245989ad9560cc04fa7622a1624",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "0338aabac6f0c5893b3c66a165476fb76511c3e1193cb6bfdf822c3602a14bb2",
+      "work": 277000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "f6dbbb7f5af9797b2da18819500c2f3eb7c0c18b1737076acc7793fec06c10a8",
+        ".kicad_pro": "81f851370e4b2d5c6896b3137d8675f9ec36c20bc695838d3150b43936d244bb",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "1e8dd464b8f09aa6fee45f361a8a6873924e40cc87cae16f7529a0a3b8402663",
+      "work": 255000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "aa4e0acb59e13b255039fb7d11368851a95e86e043f3cad8bbce485ffbf8b65f",
+        ".kicad_pro": "0db3e99524e15c045de21ea84738def41e75af6686105e7a06ef46b871fe73dd",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "28df3b90784abdaf0491e7c03dfd4cb2b48d1af45e6f09b0c10420523855ac02",
+      "work": 269000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "e283d5616f5a6fa64032d2f6a55ffb146682ba000b3eba890835418b10fb89fe",
+        ".kicad_pro": "f2629c8f0824cb70203a49c439b2b9ccd8a2ccf304f80a5ceadccad039692865",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "04777598b2bd5c74f7a25a6270d1398d7cb7fc346de2e4b2ece877bc6faceae9",
+      "work": 211000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "a4096a2911a9ef1e8301ddc07cf9fb86b1145de411cb32c18e075d4f85805428",
+        ".kicad_pro": "b22dba25c48248843a6a0906e170c583c6a1380940c3fbb25e93c6fb050fc261",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "32a8310ae2245edabb3642c9223c04ee6ba2f82940d835978c1f5c77885e318d",
+      "work": 128000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "21a9b750532ae7e3fbbd9d12ac40d9fa4464a3a613e2b4801e175f1f875c4703",
+        ".kicad_pro": "06e049c917a79a2978461cdbb87a99673126697c3bb3cee39788c8a094c0dcad",
+        ".kicad_dru": "9e5b6f5f2fd08b8f35bf3b620eee98d51b6102c5f8999a59d500d1ddb5a9dfba"
+      }
+    },
+    {
+      "id": "18b65ebc649dff7e73c43987a22fd4f1f0255d88c5a01602e1cbfc39693a8b24",
+      "work": 208000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "dfab8bf13604143364ff62c787e5be807bce8e148c6855f21db417e6b1532898",
+        ".kicad_pro": "5bdd21222f5ff6f2c6332bd6d39ec917ee3060bd6e376d9f169aab7cb97e5e59",
+        ".kicad_dru": "30fb9108680a3182b9ddf935f56421a76436167c7a2ffb55bd051a0001c5e63c"
+      }
+    },
+    {
+      "id": "365fb0df286a08b8784f223de7e55d582c9ab2d36a56f512d9843d778142741a",
+      "work": 240000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "86696bd44e074d47a847d8391e4d43d69b75c2263bd9135b3a8af61f182ba27c",
+        ".kicad_pro": "3d3a14d3c1f28122bc1a035396fd2122fcd13f2f265ab79f86d879025ef4283f",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "271dff903b0ad7186974cbaca974a5bc757be0ba99a37b38758f9a9cfe68ac50",
+      "work": 81000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "999da04447806fcf84f19e1043f205eff6c7d3c8d4bc94790d2003a54de41eb1",
+        ".kicad_pro": "f014b123808ee54256aec3c83c2d656b5c1deb7eaf967a1ab1da900b616d18fd",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "18b7595e57d67bb106ca2c031b108a36e40857bbe799a2324dd2fc110874e229",
+      "work": 288000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "0307eb3314baa3a2ef83ee631cbcb4d814aed6bd7fb7a5bd4a55053ec4e8edb1",
+        ".kicad_pro": "2dd7d50d862e8a002c54a568a74cf2d64c2ca04ca0e81af880a12d6963d8aba1",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "18b552820f53c40a487daf1ba3189863497b1cb2bdf986a5ceec6b0d264083f6",
+      "work": 211000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "d58a34357f61d48f4519d14e7b3ee693c947eeb31c9cbfdcdf84eeac2cb4e133",
+        ".kicad_pro": "b1f87568d3acc59ee906dccd6957b4e65a29bf8f0534aa8e7e293c620d562227",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "0aeac4f2d300e1e677b115a824cd8a901da4c0dc4d814369d76297a61d9cd211",
+      "work": 212000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "8694ff450acddd5dde6343c6d7ce6150ae19c5a56a922b4206a5dfee07af1c1f",
+        ".kicad_pro": "aeeab9469e2b993c245f70a0553571d7fc591bb0305659aeff4428ddf0a23803",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "096d6717e3c278f7d636a9bf4ec84c9aab7d67edca14e7758e7c617ad1927133",
+      "work": 194000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "694a4387b4538618dbebca7066f1a45c66b811fbb86ff4f7ced5ff05842f1130",
+        ".kicad_pro": "5de7c030b07424c7aa039a1d6b86280af66f00cbaad249d667656fea8d1e6776",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "16a0bc49a92abb782760ad4fa0c55743844ef087608e355708811d7d1449e84d",
+      "work": 214000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "e6b486a45d31dc3fae533afeeb3ec81b1b00bb7b41fd767fb2e42e78c6c5c183",
+        ".kicad_pro": "f14a9d962aea03f98697f5a857002d65978a6f1ab6cc1a37781278f9278c1956",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "33ff200b4346c9127c004ab1dd819627564d73ac78e3dfe0c664aa0e61dec622",
+      "work": 168000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "35484c8bd0ee5b862594f36391152104f3e1af7f4cf292bd1ba2781e9c206f0a",
+        ".kicad_pro": "1d1d1bdde2fd331cd661e3f312d5fa20b4ffb6cf8838ead289e6e92b985fe2a7",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "178331219238816232f9c8172bd358ce8022e54c24bc7ae19fcb88247c04bfb0",
+      "work": 225000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "db96896e93d04c4c4008c3c366a0370324da4af7eed65ef17844d393c8ad7885",
+        ".kicad_pro": "2ba85803f29d77f1bedb4e228aa51883f98cc5520433045b9dc006cee2933693",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "33db8f19e865ab2effe5fc6a187d8ec2c18214477379b831437254da87a67003",
+      "work": 235000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "20d872d26ee5f279dda50d7e0758f98762cd52c497510fdeb00af51a0b269d01",
+        ".kicad_pro": "b2a52d07f90993e2bba1bb8e13929f0064cd069b3f24291f339a4fc1b25d3b38",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "2ca5c2ee15ab2d17187071769afa1bb7f36620804ff0e2f3b195dabfc52be7f1",
+      "work": 233000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "ff1df2c84668b2d5270ec369b6fc9cb1d912c9e1d4026677e7978f40dda7a214",
+        ".kicad_pro": "2c7f18cad1601d6c37e08bb9c9cb1d21327696485e15209288ec869dfbce40fb",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "1f488c949eb024b9d4a2e059d61c1bba529a182270f4dc9614cb386c52c73155",
+      "work": 140000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "c33f6d29bc389e062dc734cd382d3b5b44be23f6273f2129c5555635efd33281",
+        ".kicad_pro": "1813330e66f349734ccac0ae70f3a22867cb6e554e2de00566a6ece5b21a96c0",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    },
+    {
+      "id": "295628646c4f6cea6d363f5141651f3f2227d00fdbcce87c2eb58d121b86daaf",
+      "work": 274000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "c39582c0326195a7dd75e1673a404fd57d23017343d27aa6ed92a4708f6d6293",
+        ".kicad_pro": "8838a7c3d43fd5b152c10427ac6fafdda75045521863e086a7c24a0a6470fce3",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "2e93d005ae0d4c31b959bbdbe43a3673b38f145862bd267344c6729219156b48",
+      "work": 253000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "d81b88a5f1149e07ecf57bd9101ec468d3bc66c2f0a31798c6d7de3713a1a011",
+        ".kicad_pro": "1ac6deed8478d093313095c89f4761405f9da69eb418cc121f01802c4d1e84cd",
+        ".kicad_dru": null
+      }
+    },
+    {
+      "id": "0f4e33c940b14b220f2e12e012166a67d90875bcd5b2f3e5d2a43fba51f858c5",
+      "work": 304000000,
+      "seed": 1,
+      "inputs_sha256": {
+        ".kicad_pcb": "72c483c07c3cbf1e4b875c07ee4e8a8c8bc6e514ae27e1cd4f759902df1aa7c7",
+        ".kicad_pro": "734e7dd71afabdc81b379f81a5781e2502e7c4f984cfbcfc167d39809b957097",
+        ".kicad_dru": "40f6a58290a6568d99822dbf1e80d9e14a4300cbb5105c307014bda8dfe1dcec"
+      }
+    }
+  ]
+}

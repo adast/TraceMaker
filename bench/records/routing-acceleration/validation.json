@@ -1,0 +1,308 @@
+{
+  "local_final": {
+    "code_commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+    "base_commit": "057ee8208afe76c26838ee08934906938b17c613",
+    "commits_reviewed": 11,
+    "ctest": {
+      "total": 463,
+      "passed": 420,
+      "skipped": 43,
+      "failed": 0,
+      "log_sha256": "ad10adce63d51acaf6d768f009825bc6910b5177311bbcee4aed5fbd410f809b"
+    },
+    "sanitizers": {
+      "checks_passed": 13,
+      "address": true,
+      "undefined_behavior": true,
+      "leak": true,
+      "code_commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+      "log_sha256": "4ba91a01bd4c123f79528c388595848ebdac5234f8eba72ba6e00a2683e0a919"
+    },
+    "local_gpu_used": false,
+    "mkdocs_strict": true
+  },
+  "per_commit_targeted": {
+    "complete": true,
+    "commits": [
+      {
+        "commit": "2c0407e02b246d457c313b9e98f26df18dd3d161",
+        "subject": "Establish standalone routing checks and exact artifact comparisons",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [],
+        "seconds": 33.031251192092896
+      },
+      {
+        "commit": "9fb7b47f1fbe19ee615c312ce737e475a99a36f8",
+        "subject": "Classify board raster rows with exact interval and prefix scans",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows"
+        ],
+        "seconds": 5.188092231750488
+      },
+      {
+        "commit": "713c845d69a1b17e0c21cdc9b3804548fa512599",
+        "subject": "Preserve exact search ordering with a radix priority queue",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue"
+        ],
+        "seconds": 36.55815601348877
+      },
+      {
+        "commit": "922473ed497a1abfb48c52d8e3d14347ba1ac4c4",
+        "subject": "Reject stale queue entries using conservative packed cost snapshots",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue",
+          "queue_key"
+        ],
+        "seconds": 37.594688177108765
+      },
+      {
+        "commit": "c210ad7d9f2b79a2ca0990e7eeebcf18e9f23593",
+        "subject": "Memoize complete cell costs and precompute exact planar transitions",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue",
+          "queue_key",
+          "planar_cost_table",
+          "planar_moves"
+        ],
+        "seconds": 36.68186020851135
+      },
+      {
+        "commit": "3d02ee9cfa5964aa26ad6c0a5aea8543175a5ee4",
+        "subject": "Initialize original search-node records with zero-backed storage",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue",
+          "queue_key",
+          "planar_cost_table",
+          "planar_moves",
+          "zero_nodes"
+        ],
+        "seconds": 35.61338520050049
+      },
+      {
+        "commit": "9c7e56623857750779cda153395562c05f43da31",
+        "subject": "Skip routed geometry only when conservative copper and hole bounds prove safety",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue",
+          "queue_key",
+          "planar_cost_table",
+          "planar_moves",
+          "zero_nodes",
+          "routed_bounds",
+          "routed_net_tags"
+        ],
+        "seconds": 36.517574310302734
+      },
+      {
+        "commit": "7f73c61ca36ca9cd5099ec00282213d4875a3896",
+        "subject": "Compute exact CUDA fields with warp scans and device convergence",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue",
+          "queue_key",
+          "planar_cost_table",
+          "planar_moves",
+          "zero_nodes",
+          "routed_bounds",
+          "routed_net_tags",
+          "fields"
+        ],
+        "seconds": 85.6072473526001
+      },
+      {
+        "commit": "0a910d5fa5b80ff8df4ce9c1acf9760e5d3d8416",
+        "subject": "Export immutable fixed scenes through explicit obstacle APIs",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue",
+          "queue_key",
+          "planar_cost_table",
+          "planar_moves",
+          "zero_nodes",
+          "routed_bounds",
+          "routed_net_tags",
+          "fields",
+          "fixed_index",
+          "fixed_index_cache",
+          "fixed_context",
+          "fixed_scene"
+        ],
+        "seconds": 67.53541660308838
+      },
+      {
+        "commit": "d7e36b6e46bbb0f5466a92381d34098c2bb0abaf",
+        "subject": "Own CUDA fixed-query resources and integrate ready-only prefetch",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue",
+          "queue_key",
+          "planar_cost_table",
+          "planar_moves",
+          "zero_nodes",
+          "routed_bounds",
+          "routed_net_tags",
+          "fields",
+          "fixed_index",
+          "fixed_index_cache",
+          "fixed_context",
+          "tile_broker",
+          "fixed_scene",
+          "fixed_cuda"
+        ],
+        "seconds": 98.32286167144775
+      },
+      {
+        "commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+        "subject": "Route independent boards concurrently with isolated outputs and progress",
+        "format": true,
+        "cuda_application_build": true,
+        "cpu_checks": true,
+        "check_targets": [
+          "raster_rows",
+          "search_queue",
+          "queue_key",
+          "planar_cost_table",
+          "planar_moves",
+          "zero_nodes",
+          "routed_bounds",
+          "routed_net_tags",
+          "fields",
+          "fixed_index",
+          "fixed_index_cache",
+          "fixed_context",
+          "tile_broker",
+          "fixed_scene",
+          "fixed_cuda"
+        ],
+        "seconds": 30.59497857093811
+      }
+    ]
+  },
+  "per_commit_full_suite": {
+    "complete": true,
+    "commits": [
+      {
+        "commit": "2c0407e02b246d457c313b9e98f26df18dd3d161",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 405,
+        "tests_skipped": 42,
+        "log_sha256": "5996f75bad577a478d9c313faf2337d4ae1f2f5bec077abaa21a58130d2105a4"
+      },
+      {
+        "commit": "9fb7b47f1fbe19ee615c312ce737e475a99a36f8",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 406,
+        "tests_skipped": 42,
+        "log_sha256": "2ea174132ce8c92c88f0438c86ebbc73c03c5e80616745f52c0c4a8d7eb969a2"
+      },
+      {
+        "commit": "713c845d69a1b17e0c21cdc9b3804548fa512599",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 407,
+        "tests_skipped": 42,
+        "log_sha256": "14f204e3c4f73167140464766ed4ca30b6947d51ef72df9443dc872024cb0df0"
+      },
+      {
+        "commit": "922473ed497a1abfb48c52d8e3d14347ba1ac4c4",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 408,
+        "tests_skipped": 42,
+        "log_sha256": "5ac9aca51141573b3cb3574bfcf2e230b79c8ce175b31c84efb36b7e6094721c"
+      },
+      {
+        "commit": "c210ad7d9f2b79a2ca0990e7eeebcf18e9f23593",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 410,
+        "tests_skipped": 42,
+        "log_sha256": "05819baa6bde5dfb7823ee02658ca2900a6b7a4b701bd2e1efb2f2b1ece14fb9"
+      },
+      {
+        "commit": "3d02ee9cfa5964aa26ad6c0a5aea8543175a5ee4",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 411,
+        "tests_skipped": 42,
+        "log_sha256": "c5059d17e81cd9e51716b3943ef6ff6a1038666f85e4e2c9ceaf9f4bcd6278d6"
+      },
+      {
+        "commit": "9c7e56623857750779cda153395562c05f43da31",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 413,
+        "tests_skipped": 42,
+        "log_sha256": "d918a2610aaf0fe5e4ba5d73f4e16ed1e09a77ffdbd5f93525cd4d5dc967618d"
+      },
+      {
+        "commit": "7f73c61ca36ca9cd5099ec00282213d4875a3896",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 414,
+        "tests_skipped": 42,
+        "log_sha256": "8ed82c81242b2144a539c44855cdf3ffcc2810c997c20e2f18bb63c315210345"
+      },
+      {
+        "commit": "0a910d5fa5b80ff8df4ce9c1acf9760e5d3d8416",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 418,
+        "tests_skipped": 42,
+        "log_sha256": "8e0b6dc0d8f1bb7bf0e4ec9e8f5dcf3336318e212fd5e6d5b7958732f20597aa"
+      },
+      {
+        "commit": "d7e36b6e46bbb0f5466a92381d34098c2bb0abaf",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 419,
+        "tests_skipped": 43,
+        "log_sha256": "758383d7a24dcc634e8f035035f22c4579ac55e593d136d5f09f3194728dfd37"
+      },
+      {
+        "commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+        "full_suite_passed": true,
+        "compiler_warnings": [],
+        "tests_passed": 420,
+        "tests_skipped": 43,
+        "log_sha256": "24563d952c11ad642f38d5b065f0509671e1a8a1a1a8cdd6869371d2a22dbeef"
+      }
+    ]
+  }
+}

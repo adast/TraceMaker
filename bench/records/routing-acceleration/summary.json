@@ -1,0 +1,10 @@
+{
+  "run": "routing-acceleration-ten",
+  "set": "10 matched full-work boards",
+  "boards": 10,
+  "commit": "149a5f72961143e7eb35be90e3fdeff37a15e254",
+  "clean_pass": null,
+  "completion": 0.9577294685990339,
+  "seconds": 1018.5418220767751,
+  "route_args": "--threads 1 --variants 1 --seed 1 --no-kb --no-rescue --no-why-open; per-board work in inputs.json"
+}
