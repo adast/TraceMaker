@@ -40,6 +40,8 @@
 #include "route/ref_map.hpp"
 #include "route/search_queue.hpp"
 #include "route/queue_key.hpp"
+#include "route/planar_cost_table.hpp"
+#include "route/planar_moves.hpp"
 #include "route/obstacles.hpp"
 
 namespace tmk::route {
@@ -949,7 +951,7 @@ struct Router::Impl {
   }
 
   // Extra cost of entering a cell: -1 blocked, 0 free, > 0 crossing routed copper (soft mode only).
-  std::int64_t cell_cost(const Window& w, int layer, int cx, int cy, NetId net, Coord hw) {
+  std::int64_t compute_cell_cost(const Window& w, int layer, int cx, int cy, NetId net, Coord hw) {
     const std::size_t idx = (static_cast<std::size_t>(layer) * static_cast<std::size_t>(w.h) + static_cast<std::size_t>(cy)) * static_cast<std::size_t>(w.w) + static_cast<std::size_t>(cx);
     const int gx = w.x0 + cx, gy = w.y0 + cy;
     if (cstamp[idx] != gen) {
@@ -1003,6 +1005,15 @@ struct Router::Impl {
     if (st == 1) return soft_unit + hc * 4;
     if (st == 3) return 3 * pitch + hc;
     return hc;
+  }
+  // cell_hist holds history while computing a miss, then the complete cost until this generation ends.
+  std::int64_t cell_cost(const Window& w, int layer, int cx, int cy, NetId net, Coord hw) {
+    const auto index = (static_cast<std::size_t>(layer) * static_cast<std::size_t>(w.h) + static_cast<std::size_t>(cy)) *
+                       static_cast<std::size_t>(w.w) + static_cast<std::size_t>(cx);
+    if (cstamp[index] == gen) return cell_hist[index];
+    const auto value = compute_cell_cost(w, layer, cx, cy, net, hw);
+    cell_hist[index] = value;
+    return value;
   }
   std::int64_t via_cost_at(const Window& w, int cx, int cy, NetId net, Coord d, Coord drill) {
     if (!vias_ok(net)) return -1;
@@ -1875,6 +1886,7 @@ struct Router::Impl {
     long expanded = 0;
     const long exp_cap = search_cap();
     const bool coupled_net = obs->coupling_net(net);  // KiCad's pair-gap coupling is checked on every step (doc 05 §59)
+    const PlanarCostTable planar_costs(nl, step, diag, dir_pen, opt.layer_dir_swap, layer_pm);
     std::size_t goal = SIZE_MAX;
     // Late reachability proof (RouterOptions::reach_after, doc 05 §62). A strict search that has expanded reach_after states is
     // most likely one that cannot reach its target: on the hard PCBench boards successful searches expand a median of 30-230
@@ -1959,11 +1971,10 @@ struct Router::Impl {
       }
       const std::int64_t gs = sn[s].g;
       // Planar moves.
-      for (int d = 0; d < 8; ++d) {
-        if (dir != kNoDir) {
-          const int turn = std::min((d - dir + 8) % 8, (dir - d + 8) % 8);
-          if (turn >= 3) continue;  // no 135°/180° turns
-        }
+      static_assert(kNoDir == 8);
+      const auto* planar_row = planar_costs.row(l, dir);
+      for (unsigned moves = kPlanarMoveMasks[static_cast<unsigned>(dir)]; moves; moves &= moves - 1) {
+        const int d = std::countr_zero(moves);
         const int ncx = cx + kDx[d], ncy = cy + kDy[d];
         if (ncx < 0 || ncy < 0 || ncx >= w.w || ncy >= w.h) continue;
         const std::int64_t nci = static_cast<std::int64_t>(ncy) * w.w + ncx;
@@ -1976,9 +1987,12 @@ struct Router::Impl {
           extra = textra(static_cast<std::size_t>(l) * cells + static_cast<std::size_t>(nci));
         }
         if (coupled_net && obs->coupling_state(at(w.x0 + cx, w.y0 + cy), at(w.x0 + ncx, w.y0 + ncy), l, 2 * hw, net, soft, nullptr) == 2) continue;
-        std::int64_t cost = on_layer((d & 1) ? diag : step, l) + extra;
-        if (dir_pen > 0 && !(d & 1) && ((d == 0 || d == 4) != ((l % 2 == 0) != opt.layer_dir_swap))) cost += dir_pen;  // against the layer's preferred direction (doc 16)
-        if (dir != kNoDir && d != dir) cost += ((std::min((d - dir + 8) % 8, (dir - d + 8) % 8) == 1) ? step / 2 : 2 * step);
+        std::int64_t cost;
+        if (!PlanarCostTable::add(planar_row[d], extra, cost)) {
+          cost = on_layer((d & 1) ? diag : step, l) + extra;
+          if (dir_pen > 0 && !(d & 1) && ((d == 0 || d == 4) != ((l % 2 == 0) != opt.layer_dir_swap))) cost += dir_pen;  // against the layer's preferred direction (doc 16)
+          if (dir != kNoDir && d != dir) cost += ((std::min((d - dir + 8) % 8, (dir - d + 8) % 8) == 1) ? step / 2 : 2 * step);
+        }
         const std::size_t ns = sidx(l, nci, d);
         if ((sn[ns].tag & kGenMask) == gen && sn[ns].g <= gs + cost) continue;
         const std::int64_t hn = h(l, w.x0 + ncx, w.y0 + ncy);
