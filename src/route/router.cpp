@@ -42,6 +42,7 @@
 #include "route/queue_key.hpp"
 #include "route/planar_cost_table.hpp"
 #include "route/planar_moves.hpp"
+#include "route/zero_node_array.hpp"
 #include "route/obstacles.hpp"
 
 namespace tmk::route {
@@ -107,7 +108,7 @@ struct Router::Impl {
     std::int32_t parent;
   };
   static constexpr std::uint32_t kGenMask = 0x0FFFFFFFu;
-  std::vector<SNode> sn;
+  ZeroNodeArray<SNode> sn;
   std::vector<std::uint32_t> cstamp, vstamp;
   std::vector<std::uint8_t> cell_state, via_state;  // 0 unknown, 1 free, 2 blocked (valid when stamp matches)
   std::vector<std::int64_t> cell_hist;  // history cost per cell (valid when cstamp matches)
@@ -1634,7 +1635,7 @@ struct Router::Impl {
     const std::size_t cells = static_cast<std::size_t>(w.w) * static_cast<std::size_t>(w.h);
     const std::size_t D = opt.bend_states ? 9 : 1;  // direction states per lattice point
     const std::size_t states = cells * static_cast<std::size_t>(nl) * D;
-    if (sn.size() < states) sn.assign(states, SNode{0, 0, -1});
+    if (sn.size() < states) sn.reset_zero(states);
     if (cstamp.size() < cells * static_cast<std::size_t>(nl)) {
       cstamp.assign(cells * static_cast<std::size_t>(nl), 0);
       cell_state.resize(cells * static_cast<std::size_t>(nl));
