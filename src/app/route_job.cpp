@@ -1728,7 +1728,15 @@ RouteJobResult run_route_job(RouteJob job) {
   {
     std::time_t now = std::time(nullptr);
     char date[32];
-    std::strftime(date, sizeof date, "%Y-%m-%dT%H:%M:%SZ", std::gmtime(&now));
+    // Several independent board jobs may finish together. gmtime's shared
+    // buffer is not safe to pass to strftime while another job updates it.
+    std::tm utc{};
+#if defined(_WIN32)
+    ::gmtime_s(&utc, &now);
+#else
+    ::gmtime_r(&now, &utc);
+#endif
+    std::strftime(date, sizeof date, "%Y-%m-%dT%H:%M:%SZ", &utc);
     out.summary["run"] = {{"version", std::string(version())}, {"board", name},  {"input", job.in},          {"output", job.out},
                           {"date", date},                      {"seed", opt.seed}, {"work_budget", opt.work_budget}, {"time_limit_s", opt.time_limit_s},
                           {"variants", variants},              {"threads", threads}};

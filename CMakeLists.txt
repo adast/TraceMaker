@@ -135,7 +135,7 @@ endif()
 
 # What a release carries (scripts/make_release.py: cmake --install --strip --prefix DIR). The viewer is the built
 # viewer/dist (npm run build); the binary finds it as ../share/tracemaker/viewer (default_web_root, D121).
-install(TARGETS tracemaker tracemaker-place tracemaker-view RUNTIME DESTINATION bin)
+install(TARGETS tracemaker tracemaker-batch tracemaker-place tracemaker-view RUNTIME DESTINATION bin)
 install(DIRECTORY viewer/dist/ DESTINATION share/tracemaker/viewer OPTIONAL PATTERN "*.map" EXCLUDE)
 install(FILES tests/boards/plane_smd/plane_smd.kicad_pcb tests/boards/plane_smd/plane_smd.kicad_pro DESTINATION share/tracemaker/examples/plane_smd)
 install(DIRECTORY skills/ DESTINATION share/tracemaker/skills)

@@ -56,3 +56,10 @@ if(TARGET tm_route)
   target_compile_definitions(tm_check_fixed_cuda PRIVATE TM_TEST_SOURCE_DIR="${tm_routing_root}")
   set_tests_properties(routing_fixed_cuda PROPERTIES SKIP_RETURN_CODE 77)
 endif()
+if(TARGET tracemaker-batch)
+  find_package(Python3 COMPONENTS Interpreter REQUIRED)
+  add_test(NAME routing_board_batch COMMAND "${Python3_EXECUTABLE}" -B
+    "${CMAKE_CURRENT_SOURCE_DIR}/check_board_batch.py" --binary $<TARGET_FILE:tracemaker-batch>
+    --single $<TARGET_FILE:tracemaker> --scratch "${CMAKE_BINARY_DIR}/batch-checks")
+  set_tests_properties(routing_board_batch PROPERTIES TIMEOUT 300)
+endif()
